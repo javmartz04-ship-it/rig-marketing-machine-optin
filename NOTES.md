@@ -31,5 +31,5 @@ the Tuesday sequence). Needs the Saturday webhook + thank-you URL from Javier.
 
 **Countdown:** next Saturday 11:00 America/New_York, DST-aware, shows "We're live right now" for 90 min.
 
-**Open:** webhook, thank-you page, which Saturday (countdown just targets the next one), whether
+**Webhook wired 2026-10-09:** 6c582ec4… (Saturday). **Open:** thank-you page, which Saturday (countdown just targets the next one), whether
 the 3,459 leads at $1.64 veteran-campaign line is OK on a public page.
