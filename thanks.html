@@ -1,0 +1,444 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>You're In | The Marketing Machine, Saturday 11AM EST</title>
+<meta name="robots" content="noindex">
+<link rel="preload" href="assets/fonts/InterTight.woff2" as="font" type="font/woff2" crossorigin>
+<style>
+@font-face{font-family:'Inter Tight';src:url(assets/fonts/InterTight.woff2) format('woff2');font-weight:100 900;font-display:swap}
+@font-face{font-family:'Caveat';src:url(assets/fonts/Caveat.woff2) format('woff2');font-weight:400 700;font-display:swap}
+@font-face{font-family:'JetBrains Mono';src:url(assets/fonts/JetBrainsMono.woff2) format('woff2');font-weight:100 800;font-display:swap}
+
+/* ===== tokens: same as the opt-in (The Marketing Machine deck) ===== */
+:root{
+  --paper:#F6F5F1; --ink:#0B1220;
+  --t1:#0B1220; --t2:#36414F; --t3:#5D6878; --t4:#8B95A3;
+  --line:rgba(11,18,32,.16); --line-2:rgba(11,18,32,.09);
+  --gold:#A9790A; --yellow:#F2B92E; --hl:rgba(246,196,64,.78); --pen:#1F56C4;
+  --blue:#DCE8FB; --cream:#FCEFC4; --green:#DDF1DC; --pink:#F9DDE2;
+  --sans:'Inter Tight',Inter,system-ui,-apple-system,sans-serif;
+  --hand:'Caveat','Bradley Hand',cursive;
+  --mono:'JetBrains Mono',ui-monospace,Menlo,monospace;
+  --ease:cubic-bezier(.22,1,.36,1);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{-webkit-text-size-adjust:100%}
+body{background:var(--paper);color:var(--t1);font-family:var(--sans);font-size:17px;line-height:1.55;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img{display:block;max-width:100%;height:auto}
+button{font:inherit;cursor:pointer;border:0;background:none;color:inherit}
+a{color:inherit}
+.wrap{width:min(1200px,100% - 48px);margin-inline:auto}
+
+.k{font-family:var(--mono);font-size:11.5px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);display:inline-flex;align-items:center;gap:10px}
+.k::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--yellow);box-shadow:0 0 0 2px var(--ink)}
+em.mk{font-style:normal;padding:0 .1em;margin:0 -.04em;border-radius:.12em;-webkit-box-decoration-break:clone;box-decoration-break:clone;
+  background:linear-gradient(100deg,rgba(246,196,64,0) .5%,var(--hl) 2%,rgba(246,196,64,.62) 50%,var(--hl) 97%,rgba(246,196,64,0) 99.5%) 0 62%/0% 74% no-repeat;
+  transition:background-size 1.1s var(--ease) .2s}
+em.mk.in{background-size:100% 74%}
+.hand{font-family:var(--hand);font-weight:600;color:var(--pen);line-height:1.1}
+.h2{font-weight:700;font-size:clamp(32px,4.4vw,52px);line-height:1.02;letter-spacing:-.035em;margin-top:16px}
+
+/* buttons */
+.btn{display:inline-flex;align-items:center;gap:12px;background:var(--yellow);color:var(--ink);font-weight:700;font-size:17px;letter-spacing:-.01em;text-decoration:none;
+  padding:16px 18px 16px 24px;border:2.5px solid var(--ink);border-radius:14px;box-shadow:5px 5px 0 var(--ink);transition:transform .25s var(--ease),box-shadow .25s var(--ease)}
+.btn .bi{width:32px;height:32px;border-radius:9px;background:var(--ink);color:var(--yellow);display:grid;place-items:center;transition:transform .35s var(--ease)}
+.btn:hover{transform:translate(2px,2px);box-shadow:3px 3px 0 var(--ink)}
+.btn:hover .bi{transform:rotate(-8deg) scale(1.05)}
+.btn:active{transform:translate(5px,5px);box-shadow:0 0 0 var(--ink)}
+.btn.ghost{background:#fff}
+.btn.ghost .bi{background:var(--paper);color:var(--ink);border:1.5px solid var(--ink)}
+.btn:focus-visible{outline:3px solid var(--pen);outline-offset:4px}
+.risk{font-family:var(--mono);font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--t3);margin-top:18px}
+.risk b{color:var(--t1);font-weight:600}
+
+/* reveal */
+.rv{opacity:0;transform:translateY(20px);filter:blur(6px);transition:opacity .9s var(--ease),transform .9s var(--ease),filter .9s var(--ease)}
+.rv.in{opacity:1;transform:none;filter:none}
+.d1{transition-delay:.08s}.d2{transition-delay:.16s}.d3{transition-delay:.24s}
+
+/* ===== hero ===== */
+.hero{position:relative;padding:72px 0 104px}
+.hero::before{content:"";position:absolute;inset:0;pointer-events:none;background:radial-gradient(1100px 700px at 10% -10%,#fff,transparent 62%)}
+.hero .wrap{position:relative;display:grid;grid-template-columns:1fr 1.02fr;gap:72px;align-items:center}
+.ok{display:inline-flex;align-items:center;gap:10px;background:#fff;border:1.5px solid var(--ink);border-radius:999px;padding:7px 14px 7px 8px;
+  font-family:var(--mono);font-size:11px;letter-spacing:.16em;text-transform:uppercase;font-weight:600}
+.ok i{width:20px;height:20px;border-radius:50%;background:var(--green);border:1.5px solid var(--ink);display:grid;place-items:center}
+.ok i svg{width:11px;height:11px;fill:none;stroke:var(--ink);stroke-width:3.4;stroke-linecap:round;stroke-linejoin:round}
+.h1{font-weight:700;font-size:clamp(46px,6.6vw,88px);line-height:.96;letter-spacing:-.045em;margin-top:24px}
+.h1 .ln{display:block;overflow:hidden;padding-bottom:.06em}
+.h1 .ln>span{display:inline-block;transform:translateY(105%);transition:transform 1.1s var(--ease)}
+.go .h1 .ln>span{transform:none}
+.go .h1 .ln:nth-child(2)>span{transition-delay:.1s}
+.hero .sub{font-size:20px;color:var(--t2);max-width:500px;margin-top:24px}
+.hero .sub b{color:var(--t1);font-weight:650}
+.acts{display:flex;flex-wrap:wrap;gap:16px;margin-top:34px}
+
+/* the ticket */
+.tix{position:relative;padding:20px 0 30px}
+.ticket{position:relative;display:grid;grid-template-columns:1fr 170px;background:#fff;border:2.5px solid var(--ink);border-radius:20px;box-shadow:10px 10px 0 var(--ink);
+  transform:rotate(-2.5deg);transition:transform .6s var(--ease)}
+.tix:hover .ticket{transform:rotate(-1deg) translateY(-4px)}
+.ticket::before,.ticket::after{content:"";position:absolute;right:157px;width:28px;height:28px;border-radius:50%;background:var(--paper);border:2.5px solid var(--ink);z-index:2}
+.ticket::before{top:-15px;clip-path:inset(50% 0 0 0)}
+.ticket::after{bottom:-15px;clip-path:inset(0 0 50% 0)}
+.t-main{padding:28px 30px 26px;border-right:2.5px dashed rgba(11,18,32,.35);position:relative;overflow:hidden}
+.t-top{display:flex;align-items:center;gap:14px}
+.t-top img{height:40px;width:auto}
+.t-top span{font-family:var(--mono);font-size:10.5px;letter-spacing:.22em;text-transform:uppercase;font-weight:700;border:1.5px solid var(--ink);border-radius:6px;padding:4px 8px}
+.t-name{font-size:clamp(30px,3.3vw,42px);font-weight:700;letter-spacing:-.04em;line-height:1;margin-top:24px}
+.t-name em{font-style:normal;background:linear-gradient(100deg,rgba(246,196,64,0) .5%,var(--hl) 2%,rgba(246,196,64,.62) 50%,var(--hl) 97%,rgba(246,196,64,0) 99.5%) 0 62%/100% 74% no-repeat;padding:0 .08em}
+.t-by{color:var(--t3);font-size:15px;margin-top:8px}
+.t-fields{display:grid;grid-template-columns:1fr 1fr;margin-top:22px;border-top:1.5px solid var(--line)}
+.t-fields div{padding:12px 0;border-bottom:1.5px solid var(--line)}
+.t-fields div:nth-child(odd){padding-right:14px;border-right:1.5px solid var(--line)}
+.t-fields div:nth-child(even){padding-left:16px}
+.t-fields small{display:block;font-family:var(--mono);font-size:9.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--t4);font-weight:600}
+.t-fields b{display:block;font-size:19px;font-weight:700;letter-spacing:-.02em;margin-top:2px}
+.stamp{position:absolute;right:16px;top:14px;width:92px;height:92px;border-radius:50%;border:2.5px solid #C2362E;color:#C2362E;display:grid;place-items:center;text-align:center;
+  font-family:var(--mono);font-size:10px;letter-spacing:.16em;text-transform:uppercase;font-weight:800;line-height:1.35;transform:rotate(-14deg) scale(1.6);opacity:0;
+  transition:transform .5s cubic-bezier(.34,1.56,.64,1) .9s,opacity .2s ease .9s;mix-blend-mode:multiply}
+.stamp::before{content:"";position:absolute;inset:5px;border-radius:50%;border:1.5px dashed rgba(194,54,46,.7)}
+.go .stamp{transform:rotate(-14deg) scale(1);opacity:.9}
+.stamp b{display:block;font-size:13.5px;letter-spacing:.06em}
+.t-stub{padding:26px 18px;display:flex;flex-direction:column;align-items:center;justify-content:space-between;background:var(--cream);border-radius:0 17px 17px 0;text-align:center}
+.t-stub .lab{font-family:var(--mono);font-size:9.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);font-weight:700}
+.cd{display:grid;gap:6px;width:100%;margin-top:10px}
+.cd div{background:var(--ink);color:#fff;border-radius:10px;padding:7px 0 6px}
+.cd b{display:block;font-size:26px;font-weight:700;letter-spacing:-.03em;line-height:1;font-variant-numeric:tabular-nums}
+.cd small{font-family:var(--mono);font-size:8.5px;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.55)}
+.live-now{display:none;background:#C2362E;color:#fff;border-radius:10px;padding:10px 6px;font-weight:700;font-size:15px;margin-top:10px}
+.is-live .cd{display:none}.is-live .live-now{display:block}
+.bars{width:100%;height:46px;margin-top:16px}
+.t-stub .no{font-family:var(--mono);font-size:9.5px;letter-spacing:.14em;color:var(--t3);margin-top:6px}
+.tix .note{position:absolute;right:6px;bottom:-26px;font-size:28px;transform:rotate(-3deg)}
+.tix .note svg{display:inline-block;vertical-align:middle;width:40px;height:28px;margin-right:4px;stroke:var(--pen);fill:none;stroke-width:2.4;stroke-linecap:round}
+
+/* ===== next steps ===== */
+.sec{padding:104px 0}
+.steps{background:#fff;border-top:1.5px solid var(--ink);border-bottom:1.5px solid var(--ink)}
+.steps .grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:72px;align-items:start}
+.steps .lede{color:var(--t2);font-size:18px;margin-top:18px;max-width:380px}
+.rows{border-top:2px solid var(--ink)}
+.row{display:grid;grid-template-columns:84px 1fr;gap:24px;padding:30px 0;border-bottom:1.5px solid var(--line);align-items:start}
+.tile{width:84px;height:84px;border:2.5px solid var(--ink);border-radius:16px;box-shadow:5px 5px 0 var(--ink);display:grid;place-items:center;background:#fff;transition:transform .35s var(--ease),box-shadow .35s var(--ease)}
+.row:hover .tile{transform:translate(-2px,-2px) rotate(-3deg);box-shadow:7px 7px 0 var(--ink)}
+.tile svg{width:56%;height:56%;fill:none;stroke:var(--ink);stroke-width:5;stroke-linecap:round;stroke-linejoin:round}
+.tile svg .f{fill:var(--ink)}
+.tile.blue{background:var(--blue)}.tile.pink{background:var(--pink)}.tile.yellow{background:var(--cream)}.tile.green{background:var(--green)}
+.row .n{font-family:var(--mono);font-size:11px;font-weight:600;letter-spacing:.14em;color:var(--gold)}
+.row h3{font-size:24px;font-weight:700;letter-spacing:-.025em;line-height:1.15;margin-top:4px}
+.row p{color:var(--t2);margin-top:8px}
+.row p b{color:var(--t1);font-weight:650}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
+.chips span{font-size:13.5px;font-weight:600;background:var(--paper);border:1.5px solid var(--ink);border-radius:999px;padding:4px 11px}
+
+/* ===== filmstrip ===== */
+.film{padding:104px 0 96px;overflow:hidden}
+.film .head{display:flex;justify-content:space-between;align-items:end;gap:32px;flex-wrap:wrap}
+.film .head .hand{font-size:30px;transform:rotate(-2deg)}
+.strip{margin-top:52px;display:flex;gap:28px;width:max-content;animation:roll 60s linear infinite;padding:8px 0 18px}
+.film:hover .strip{animation-play-state:paused}
+@keyframes roll{to{transform:translateX(calc(-50% - 14px))}}
+.strip .s{width:420px;flex:none;border:2.5px solid var(--ink);border-radius:14px;overflow:hidden;box-shadow:7px 7px 0 var(--ink);background:#fff;aspect-ratio:16/9}
+.strip .s:nth-child(odd){transform:rotate(-1.4deg)}
+.strip .s:nth-child(even){transform:rotate(1.2deg) translateY(10px)}
+.strip .s img{width:100%;height:100%;object-fit:cover}
+
+/* ===== sign-off ===== */
+.bye{padding:24px 0 110px}
+.bye .box{position:relative;background:var(--ink);color:#fff;border-radius:26px;box-shadow:10px 10px 0 var(--yellow),10px 10px 0 2.5px var(--ink);
+  display:grid;grid-template-columns:1fr 340px;align-items:end;overflow:hidden;min-height:400px}
+.bye .box::before{content:"";position:absolute;inset:0;background:radial-gradient(600px 420px at 85% 100%,rgba(242,185,46,.22),transparent 65%),radial-gradient(500px 400px at 0% 0%,rgba(31,86,196,.25),transparent 60%);pointer-events:none}
+.bye .txt{position:relative;padding:68px 60px}
+.bye .k{color:var(--yellow)}
+.bye .k::before{box-shadow:0 0 0 2px #fff}
+.bye h2{font-size:clamp(40px,5.4vw,70px);font-weight:700;letter-spacing:-.045em;line-height:.98;margin-top:18px}
+.bye h2 em{font-style:normal;color:var(--ink);padding:0 .1em;background:linear-gradient(100deg,rgba(246,196,64,0) .5%,#F6C440 2%,#F2B92E 50%,#F6C440 97%,rgba(246,196,64,0) 99.5%) 0 62%/100% 78% no-repeat}
+.bye p{color:rgba(255,255,255,.72);font-size:18px;margin-top:20px;max-width:480px}
+.bye .sig{font-family:var(--hand);font-size:34px;color:var(--yellow);margin-top:26px;line-height:1}
+.bye .sig small{display:block;font-family:var(--mono);font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:rgba(255,255,255,.5);margin-top:8px}
+.bye .jb{position:relative;align-self:end;height:100%;display:flex;align-items:flex-end;justify-content:center}
+.bye .jb::before{content:"";position:absolute;bottom:-90px;left:50%;width:330px;height:330px;transform:translateX(-50%);border-radius:50%;background:var(--yellow);border:2.5px solid #fff}
+.bye .jb img{position:relative;width:310px;max-width:none}
+
+footer{border-top:1.5px solid var(--ink);padding:40px 0 60px;text-align:center}
+footer img{height:56px;width:auto;margin:0 auto}
+footer p{font-family:var(--mono);font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--t4);margin-top:16px;line-height:1.8}
+
+/* ===== responsive ===== */
+@media (max-width:1080px){
+  .hero .wrap{grid-template-columns:1fr;gap:56px}
+  .tix{max-width:620px}
+  .steps .grid{grid-template-columns:1fr;gap:44px}
+  .bye .box{grid-template-columns:1fr 260px}
+  .bye .jb img{width:250px}
+  .bye .jb::before{width:260px;height:260px}
+}
+@media (max-width:720px){
+  body{font-size:16px}
+  .wrap{width:calc(100% - 32px)}
+  .hero{padding:36px 0 80px}
+  .hero .sub{font-size:18px}
+  .acts{flex-direction:column;align-items:stretch}
+  .acts .btn{justify-content:space-between}
+  .ticket{grid-template-columns:1fr 104px;transform:rotate(-1.5deg)}
+  .ticket::before,.ticket::after{right:91px;width:24px;height:24px}
+  .ticket::before{top:-13px}.ticket::after{bottom:-13px}
+  .t-main{padding:20px 16px 18px}
+  .t-top img{height:30px}
+  .t-top span{font-size:9px;padding:3px 6px;letter-spacing:.16em}
+  .t-name{font-size:26px;margin-top:16px}
+  .t-by{font-size:13.5px}
+  .t-fields{grid-template-columns:1fr}
+  .t-fields div:nth-child(odd){border-right:0;padding-right:0}
+  .t-fields div:nth-child(even){padding-left:0}
+  .t-fields div{padding:8px 0}
+  .t-fields b{font-size:16px}
+  .stamp{width:66px;height:66px;font-size:7px;right:8px;top:8px}
+  .t-name{margin-top:30px}
+  .t-top span{display:none}
+  .stamp b{font-size:11.5px}
+  .t-stub{padding:18px 8px;border-radius:0 17px 17px 0}
+  .cd b{font-size:20px}
+  .bars{height:34px}
+  .tix .note{font-size:23px;bottom:-28px}
+  .sec{padding:80px 0}
+  .row{grid-template-columns:64px 1fr;gap:18px}
+  .tile{width:64px;height:64px;border-radius:13px;box-shadow:4px 4px 0 var(--ink)}
+  .row h3{font-size:21px}
+  .film{padding:80px 0}
+  .strip .s{width:290px}
+  .bye{padding:8px 0 84px}
+  .bye .box{grid-template-columns:1fr;border-radius:20px}
+  .bye .txt{padding:48px 24px 8px}
+  .bye .jb{height:300px}
+  .bye .jb img{width:240px}
+  .bye .jb::before{width:250px;height:250px;bottom:-70px}
+}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{transition:none!important;animation:none!important}
+  .rv{opacity:1;transform:none;filter:none}
+  .h1 .ln>span{transform:none}
+  em.mk{background-size:100% 74%}
+  .stamp{opacity:.9;transform:rotate(-14deg)}
+}
+</style>
+</head>
+<body>
+
+<main>
+<!-- ===== hero: confirmation + the ticket ===== -->
+<section class="hero" id="hero">
+  <div class="wrap">
+    <div>
+      <span class="ok"><i><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg></i>Seat reserved</span>
+      <h1 class="h1">
+        <span class="ln"><span>You're in.</span></span>
+        <span class="ln"><span>See you <em class="mk">Saturday at 11.</em></span></span>
+      </h1>
+      <p class="sub">Your link is on its way by text and email. <b>Put it on your calendar now</b> so Saturday morning doesn't sneak up on you.</p>
+      <div class="acts">
+        <a class="btn" id="gcal" href="#" target="_blank" rel="noopener">Add To Google Calendar <span class="bi"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4M12 13v5M9.5 15.5h5"/></svg></span></a>
+        <button class="btn ghost" id="ics">Apple Or Outlook <span class="bi"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M12 4v11M7 10l5 5 5-5M5 20h14"/></svg></span></button>
+      </div>
+      <p class="risk"><b>Takes 5 seconds</b> &nbsp;&middot;&nbsp; Live online &nbsp;&middot;&nbsp; Free</p>
+    </div>
+
+    <div class="tix rv d2">
+      <div class="ticket" id="ticket">
+        <div class="t-main">
+          <div class="t-top"><img src="assets/rig-logo.webp" alt="Real Insurance Group" width="900" height="477"><span>Admit one</span></div>
+          <p class="t-name">The Marketing <em>Machine</em></p>
+          <p class="t-by">Free live masterclass with Johnny Brock</p>
+          <div class="t-fields">
+            <div><small>Date</small><b data-date>Saturday</b></div>
+            <div><small>Time</small><b>11:00 AM EST</b></div>
+            <div><small>Where</small><b>Live online</b></div>
+            <div><small>Host</small><b>Johnny Brock</b></div>
+          </div>
+          <div class="stamp" aria-hidden="true"><span>Seat<b>Reserved</b>Free</span></div>
+        </div>
+        <div class="t-stub" id="stub">
+          <span class="lab">Starts in</span>
+          <div class="cd">
+            <div><b data-d>00</b><small>Days</small></div>
+            <div><b data-h>00</b><small>Hrs</small></div>
+            <div><b data-m>00</b><small>Min</small></div>
+          </div>
+          <div class="live-now">We're live</div>
+          <svg class="bars" viewBox="0 0 120 46" preserveAspectRatio="none" aria-hidden="true" id="bars"></svg>
+          <span class="no" data-no>MM-SAT-1100</span>
+        </div>
+      </div>
+      <p class="note hand"><svg viewBox="0 0 40 28"><path d="M38 6C26 0 12 4 6 20M14 18l-8 3-2-8"/></svg>screenshot it. we'll text you too.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===== before Saturday ===== -->
+<section class="sec steps">
+  <div class="wrap grid">
+    <div>
+      <span class="k rv">Before Saturday</span>
+      <h2 class="h2 rv d1">Three things before <em class="mk">you show up.</em></h2>
+      <p class="lede rv d2">None of them take long. All three make the 90 minutes worth more.</p>
+    </div>
+    <div class="rows">
+      <div class="row rv">
+        <div class="tile pink"><svg viewBox="0 0 120 120"><path d="M18 26h84v54H54L34 98V80H18z"/><path d="M34 44h52M34 60h34"/></svg></div>
+        <div><span class="n">01</span><h3>Watch for the text and email.</h3><p>Your link comes from <b>The Real Insurance Group</b>. Not there in 5 minutes? Check spam and promotions, and move it to your inbox so the reminders land.</p></div>
+      </div>
+      <div class="row rv d1">
+        <div class="tile yellow"><svg viewBox="0 0 120 120"><path d="M20 98h80"/><rect x="28" y="62" width="14" height="36" rx="2"/><rect x="53" y="44" width="14" height="54" rx="2"/><rect x="78" y="24" width="14" height="74" rx="2" class="f"/></svg></div>
+        <div><span class="n">02</span><h3>Bring your numbers.</h3><p>The more real your questions, the better the Q&amp;A. Have these handy:</p>
+          <div class="chips"><span>What you spend a month</span><span>Cost per lead</span><span>Leads last month</span><span>How many became clients</span></div></div>
+      </div>
+      <div class="row rv d2">
+        <div class="tile green"><svg viewBox="0 0 120 120"><circle cx="60" cy="62" r="38"/><path d="M60 38v24l16 10"/><path d="M48 16h24"/></svg></div>
+        <div><span class="n">03</span><h3>Show up live, on time.</h3><p><b>Saturday, 11AM EST.</b> Johnny walks through all five parts on screen, then stays on for Q&amp;A until the questions run out.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== what's on the screen ===== -->
+<section class="film" aria-label="Slides from Saturday's masterclass">
+  <div class="wrap head">
+    <div>
+      <span class="k rv">A look at Saturday</span>
+      <h2 class="h2 rv d1">The real slides, <em class="mk">five parts.</em></h2>
+    </div>
+    <p class="hand rv d2">market &rarr; message &rarr; ads &rarr; funnel &rarr; backend</p>
+  </div>
+  <div class="strip" id="strip">
+    <div class="s"><img src="assets/slides/s05.jpg" alt="Slide: the Medicare Marketing Machine has five parts" width="1600" height="900"></div>
+    <div class="s"><img src="assets/slides/s07.jpg" alt="Slide: I sell Medicare is not a market" width="1600" height="900"></div>
+    <div class="s"><img src="assets/slides/s09.jpg" alt="Slide: more than one way to run Medicare marketing" width="1600" height="900"></div>
+    <div class="s"><img src="assets/slides/s11.jpg" alt="Slide: every ad that works has the same four parts" width="1600" height="900"></div>
+    <div class="s"><img src="assets/slides/s13.jpg" alt="Slide: same formula, four different people" width="1600" height="900"></div>
+    <div class="s"><img src="assets/slides/s20.jpg" alt="Slide: how to set up the account" width="1600" height="900"></div>
+    <div class="s"><img src="assets/slides/s26.jpg" alt="Slide: reading the account" width="1600" height="900"></div>
+    <div class="s"><img src="assets/slides/s35.jpg" alt="Slide: same ad, same 100 leads, four times the clients" width="1600" height="900"></div>
+  </div>
+</section>
+
+<!-- ===== sign-off ===== -->
+<section class="bye">
+  <div class="wrap">
+    <div class="box rv">
+      <div class="txt">
+        <span class="k">Saturday &middot; 11AM EST</span>
+        <h2>Bring your questions.<br><em>I'll bring the machine.</em></h2>
+        <p>Five parts, a real account on screen, and a live Q&amp;A at the end. Save the date and I'll see you there.</p>
+        <p class="sig">Johnny Brock<small>Founder &amp; CEO, The Real Insurance Group</small></p>
+      </div>
+      <div class="jb"><img src="assets/johnny-main.webp" alt="Johnny Brock" width="640" height="824"></div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <img src="assets/rig-logo.webp" alt="Real Insurance Group" width="900" height="477">
+    <p>&copy; 2026 The Real Insurance Group. All rights reserved.<br>Not connected with or endorsed by the United States government or the federal Medicare program.</p>
+  </div>
+</footer>
+
+<script>
+/* ============ EVENT: every Saturday, 11:00am America/New_York, ~90 min ============ */
+const EVENT = { weekday:6, hour:11, min:0, runMinutes:90 };
+const TITLE = 'The Marketing Machine: Free Live Masterclass with Johnny Brock';
+const DETAILS = 'How to market a Medicare business, from the first ad to the renewal. Your join link comes by text and email from The Real Insurance Group. Bring your numbers for the live Q&A.';
+/* ================================================================================== */
+
+const reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+function etParts(d){
+  return Object.fromEntries(new Intl.DateTimeFormat('en-US',{timeZone:'America/New_York',hour12:false,weekday:'short',
+    year:'numeric',month:'2-digit',day:'2-digit',hour:'2-digit',minute:'2-digit',second:'2-digit'}).formatToParts(d).map(x=>[x.type,x.value]));
+}
+function etOffsetMin(d){
+  const p = etParts(d);
+  return (Date.UTC(+p.year,+p.month-1,+p.day,p.hour==='24'?0:+p.hour,+p.minute,+p.second) - d.getTime())/60000;
+}
+function nextStart(now){
+  const p = etParts(now);
+  const wd = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'].indexOf(p.weekday);
+  for(let add=0; add<=7; add++){
+    if((wd+add)%7 !== EVENT.weekday) continue;
+    const guess = Date.UTC(+p.year,+p.month-1,+p.day+add,EVENT.hour,EVENT.min);
+    const t = guess - etOffsetMin(new Date(guess))*60000;
+    if(t + EVENT.runMinutes*60000 > now.getTime()) return t;
+  }
+}
+const START = nextStart(new Date()), END = START + EVENT.runMinutes*60000;
+const pad = n => String(n).padStart(2,'0');
+
+/* date on the ticket + ticket number */
+const dParts = new Intl.DateTimeFormat('en-US',{timeZone:'America/New_York',weekday:'short',month:'short',day:'numeric'}).formatToParts(new Date(START));
+const g = t => dParts.find(x=>x.type===t).value;
+document.querySelector('[data-date]').textContent = `${g('weekday')}, ${g('month')} ${g('day')}`;
+document.querySelector('[data-no]').textContent = `MM-${g('month').toUpperCase()}${pad(g('day'))}-1100`;
+
+/* countdown on the stub */
+const stub = document.getElementById('stub');
+function tick(){
+  const ms = START - Date.now();
+  if(ms <= 0){ stub.classList.add('is-live'); return; }
+  const s = Math.floor(ms/1000);
+  stub.querySelector('[data-d]').textContent = pad(Math.floor(s/86400));
+  stub.querySelector('[data-h]').textContent = pad(Math.floor(s%86400/3600));
+  stub.querySelector('[data-m]').textContent = pad(Math.floor(s%3600/60));
+}
+tick(); setInterval(tick, 1000);
+
+/* stub barcode: deterministic stripes */
+(function(){
+  const svg = document.getElementById('bars'); let x = 0, seed = 7, out = '';
+  const rnd = ()=>{ seed = (seed*9301+49297)%233280; return seed/233280; };
+  while(x < 120){ const w = 1 + Math.floor(rnd()*3.2); if(rnd() > .35) out += `<rect x="${x}" y="0" width="${w}" height="46" fill="#0B1220"/>`; x += w + 1 + Math.floor(rnd()*2); }
+  svg.innerHTML = out;
+})();
+
+/* calendar links */
+const z = t => new Date(t).toISOString().replace(/[-:]/g,'').replace(/\.\d{3}/,'');
+document.getElementById('gcal').href = 'https://calendar.google.com/calendar/render?action=TEMPLATE'
+  + '&text=' + encodeURIComponent(TITLE)
+  + '&dates=' + z(START) + '/' + z(END)
+  + '&details=' + encodeURIComponent(DETAILS)
+  + '&location=' + encodeURIComponent('Online (link sent by text and email)');
+document.getElementById('ics').addEventListener('click', ()=>{
+  const ics = ['BEGIN:VCALENDAR','VERSION:2.0','PRODID:-//The Real Insurance Group//Marketing Machine//EN','BEGIN:VEVENT',
+    'UID:mm-' + START + '@therealinsurancegroup.com','DTSTAMP:' + z(Date.now()),'DTSTART:' + z(START),'DTEND:' + z(END),
+    'SUMMARY:' + TITLE,'DESCRIPTION:' + DETAILS,'LOCATION:Online (link sent by text and email)',
+    'BEGIN:VALARM','TRIGGER:-PT30M','ACTION:DISPLAY','DESCRIPTION:The Marketing Machine starts in 30 minutes','END:VALARM',
+    'END:VEVENT','END:VCALENDAR'].join('\r\n');
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(new Blob([ics],{type:'text/calendar'}));
+  a.download = 'the-marketing-machine.ics';
+  document.body.appendChild(a); a.click(); a.remove();
+});
+
+/* filmstrip: duplicate once for a seamless loop */
+const strip = document.getElementById('strip');
+strip.innerHTML += strip.innerHTML.replace(/alt="[^"]*"/g,'alt="" aria-hidden="true"');
+
+/* entrance + reveals */
+requestAnimationFrame(()=>requestAnimationFrame(()=>{
+  document.getElementById('hero').classList.add('go');
+  setTimeout(()=>document.querySelector('.h1 em.mk').classList.add('in'), 450);
+}));
+const io = new IntersectionObserver(es=>es.forEach(e=>{
+  if(!e.isIntersecting) return;
+  e.target.classList.add('in');
+  e.target.querySelectorAll('em.mk').forEach(m=>m.classList.add('in'));
+  io.unobserve(e.target);
+}),{threshold:.18});
+document.querySelectorAll('.rv').forEach(el=>io.observe(el));
+document.querySelectorAll('.k.rv + .h2 em.mk').forEach(m=>io.observe(m.closest('.h2')));
+</script>
+</body>
+</html>

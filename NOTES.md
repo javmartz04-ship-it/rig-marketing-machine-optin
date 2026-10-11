@@ -39,3 +39,5 @@ the 3,459 leads at $1.64 veteran-campaign line is OK on a public page.
 **2026-10-11:** real RIG logo (gold/silver, from Javier) cut out of its black background to a transparent webp (assets/rig-logo.webp). It's in the webinar window bar, the final CTA box and the footer. The old black checkmark logo.webp is gone. The slide screenshots still show the old logo on slide 01.
 
 **2026-10-11:** two video testimonials added above the text quotes (from Javier's Desktop): Barry, agency owner with 7 employees, 20 → 50 deals a week (no last name given); and the ASL agent, labelled Justin Gray from the ASL client memory, not stated in the clip. 720x1280 H.264 + whisper VTT captions in assets/video; poster frames picked so the face is clear; the play button sits at the bottom so it doesn't cover faces.
+
+**2026-10-11:** testimonial headlines per Javier: Barry = "Scaled to 50 / deals a week, up from 20"; Justin = "$12 / booked appointments in the ASL market" (Javier's framing; the clip itself says leads at ~12 bucks). Mobile pass at 360/390/430: no horizontal overflow; pill + webinar bar no longer wrap; the five parts become compact icon rows under 720px.
