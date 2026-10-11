@@ -37,3 +37,5 @@ the 3,459 leads at $1.64 veteran-campaign line is OK on a public page.
 **2026-10-11:** first Saturday run went well ("crushed"); it's now an every-Saturday webinar (countdown already rolls weekly). Fixed the cam tile: a generic `.win .screen img` rule (height:100%, object-fit:cover) was cropping Johnny's forehead; the cam img now overrides it with height:auto.
 
 **2026-10-11:** real RIG logo (gold/silver, from Javier) cut out of its black background to a transparent webp (assets/rig-logo.webp). It's in the webinar window bar, the final CTA box and the footer. The old black checkmark logo.webp is gone. The slide screenshots still show the old logo on slide 01.
+
+**2026-10-11:** two video testimonials added above the text quotes (from Javier's Desktop): Barry, agency owner with 7 employees, 20 → 50 deals a week (no last name given); and the ASL agent, labelled Justin Gray from the ASL client memory, not stated in the clip. 720x1280 H.264 + whisper VTT captions in assets/video; poster frames picked so the face is clear; the play button sits at the bottom so it doesn't cover faces.
