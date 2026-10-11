@@ -73,7 +73,16 @@ em.mk.in{background-size:100% 74%}
 .go .h1 .ln:nth-child(2)>span{transition-delay:.1s}
 .hero .sub{font-size:20px;color:var(--t2);max-width:500px;margin-top:24px}
 .hero .sub b{color:var(--t1);font-weight:650}
-.acts{display:flex;flex-wrap:wrap;gap:16px;margin-top:34px}
+.next{list-style:none;margin-top:32px;max-width:520px;background:#fff;border:2.5px solid var(--ink);border-radius:16px;box-shadow:6px 6px 0 var(--ink);padding:6px 22px}
+.next li{position:relative;display:grid;grid-template-columns:132px 1fr;column-gap:16px;padding:15px 0 15px 22px;border-bottom:1.5px dashed var(--line)}
+.next li:last-child{border-bottom:0}
+.next li::before{content:"";position:absolute;left:0;top:21px;width:10px;height:10px;border-radius:50%;background:#fff;border:2px solid var(--ink)}
+.next li:first-child::before{background:var(--yellow)}
+.next li::after{content:"";position:absolute;left:5px;top:33px;bottom:-21px;width:0;border-left:2px dotted rgba(11,18,32,.3)}
+.next li:last-child::after{display:none}
+.next span{grid-row:1/3;font-family:var(--mono);font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);font-weight:700;padding-top:4px}
+.next b{font-size:17px;font-weight:700;letter-spacing:-.015em}
+.next em{font-style:normal;color:var(--t3);font-size:15px}
 
 /* the ticket */
 .tix{position:relative;padding:20px 0 30px}
@@ -138,7 +147,7 @@ em.mk.in{background-size:100% 74%}
 .film{padding:104px 0 96px;overflow:hidden}
 .film .head{display:flex;justify-content:space-between;align-items:end;gap:32px;flex-wrap:wrap}
 .film .head .hand{font-size:30px;transform:rotate(-2deg)}
-.strip{margin-top:52px;display:flex;gap:28px;width:max-content;animation:roll 60s linear infinite;padding:8px 0 18px}
+.strip{margin-top:52px;display:flex;gap:28px;width:max-content;animation:roll 40s linear infinite;padding:8px 0 18px}
 .film:hover .strip{animation-play-state:paused}
 @keyframes roll{to{transform:translateX(calc(-50% - 14px))}}
 .strip .s{width:420px;flex:none;border:2.5px solid var(--ink);border-radius:14px;overflow:hidden;box-shadow:7px 7px 0 var(--ink);background:#fff;aspect-ratio:16/9}
@@ -181,8 +190,9 @@ footer p{font-family:var(--mono);font-size:10.5px;letter-spacing:.12em;text-tran
   .wrap{width:calc(100% - 32px)}
   .hero{padding:36px 0 80px}
   .hero .sub{font-size:18px}
-  .acts{flex-direction:column;align-items:stretch}
-  .acts .btn{justify-content:space-between}
+  .next{padding:4px 16px}
+  .next li{grid-template-columns:1fr;padding-left:20px}
+  .next span{grid-row:auto;padding-top:0}
   .ticket{grid-template-columns:1fr 104px;transform:rotate(-1.5deg)}
   .ticket::before,.ticket::after{right:91px;width:24px;height:24px}
   .ticket::before{top:-13px}.ticket::after{bottom:-13px}
@@ -238,12 +248,13 @@ footer p{font-family:var(--mono);font-size:10.5px;letter-spacing:.12em;text-tran
         <span class="ln"><span>You're in.</span></span>
         <span class="ln"><span>See you <em class="mk">Saturday at 11.</em></span></span>
       </h1>
-      <p class="sub">Your link is on its way by text and email. <b>Put it on your calendar now</b> so Saturday morning doesn't sneak up on you.</p>
-      <div class="acts">
-        <a class="btn" id="gcal" href="#" target="_blank" rel="noopener">Add To Google Calendar <span class="bi"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4M12 13v5M9.5 15.5h5"/></svg></span></a>
-        <button class="btn ghost" id="ics">Apple Or Outlook <span class="bi"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M12 4v11M7 10l5 5 5-5M5 20h14"/></svg></span></button>
-      </div>
-      <p class="risk"><b>Takes 5 seconds</b> &nbsp;&middot;&nbsp; Live online &nbsp;&middot;&nbsp; Free</p>
+      <p class="sub">Your seat is saved. <b>Keep an eye on your texts and email</b>: we'll send updates before the presentation, and your link to join the day of.</p>
+      <ol class="next">
+        <li><span>Right now</span><b>Your confirmation</b><em>By text and email, in the next few minutes.</em></li>
+        <li><span>Before Saturday</span><b>Updates and reminders</b><em>So the day doesn't sneak up on you.</em></li>
+        <li><span>Saturday, day of</span><b>Your link to join</b><em>Click it, and you're in the room at 11AM EST.</em></li>
+      </ol>
+      <p class="risk"><b>Free</b> &nbsp;&middot;&nbsp; Live online &nbsp;&middot;&nbsp; Saturday 11AM EST</p>
     </div>
 
     <div class="tix rv d2">
@@ -288,7 +299,7 @@ footer p{font-family:var(--mono);font-size:10.5px;letter-spacing:.12em;text-tran
     <div class="rows">
       <div class="row rv">
         <div class="tile pink"><svg viewBox="0 0 120 120"><path d="M18 26h84v54H54L34 98V80H18z"/><path d="M34 44h52M34 60h34"/></svg></div>
-        <div><span class="n">01</span><h3>Watch for the text and email.</h3><p>Your link comes from <b>The Real Insurance Group</b>. Not there in 5 minutes? Check spam and promotions, and move it to your inbox so the reminders land.</p></div>
+        <div><span class="n">01</span><h3>Watch for our texts and emails.</h3><p>We'll be sending you updates before the presentation, and <b>your link to join the day of</b>. They come from The Real Insurance Group. Nothing in 5 minutes? Check spam and promotions.</p></div>
       </div>
       <div class="row rv d1">
         <div class="tile yellow"><svg viewBox="0 0 120 120"><path d="M20 98h80"/><rect x="28" y="62" width="14" height="36" rx="2"/><rect x="53" y="44" width="14" height="54" rx="2"/><rect x="78" y="24" width="14" height="74" rx="2" class="f"/></svg></div>
@@ -308,19 +319,14 @@ footer p{font-family:var(--mono);font-size:10.5px;letter-spacing:.12em;text-tran
   <div class="wrap head">
     <div>
       <span class="k rv">A look at Saturday</span>
-      <h2 class="h2 rv d1">The real slides, <em class="mk">five parts.</em></h2>
+      <h2 class="h2 rv d1">A peek at <em class="mk">the slides.</em></h2>
     </div>
     <p class="hand rv d2">market &rarr; message &rarr; ads &rarr; funnel &rarr; backend</p>
   </div>
   <div class="strip" id="strip">
     <div class="s"><img src="assets/slides/s05.jpg" alt="Slide: the Medicare Marketing Machine has five parts" width="1600" height="900"></div>
     <div class="s"><img src="assets/slides/s07.jpg" alt="Slide: I sell Medicare is not a market" width="1600" height="900"></div>
-    <div class="s"><img src="assets/slides/s09.jpg" alt="Slide: more than one way to run Medicare marketing" width="1600" height="900"></div>
     <div class="s"><img src="assets/slides/s11.jpg" alt="Slide: every ad that works has the same four parts" width="1600" height="900"></div>
-    <div class="s"><img src="assets/slides/s13.jpg" alt="Slide: same formula, four different people" width="1600" height="900"></div>
-    <div class="s"><img src="assets/slides/s20.jpg" alt="Slide: how to set up the account" width="1600" height="900"></div>
-    <div class="s"><img src="assets/slides/s26.jpg" alt="Slide: reading the account" width="1600" height="900"></div>
-    <div class="s"><img src="assets/slides/s35.jpg" alt="Slide: same ad, same 100 leads, four times the clients" width="1600" height="900"></div>
   </div>
 </section>
 
@@ -350,8 +356,6 @@ footer p{font-family:var(--mono);font-size:10.5px;letter-spacing:.12em;text-tran
 <script>
 /* ============ EVENT: every Saturday, 11:00am America/New_York, ~90 min ============ */
 const EVENT = { weekday:6, hour:11, min:0, runMinutes:90 };
-const TITLE = 'The Marketing Machine: Free Live Masterclass with Johnny Brock';
-const DETAILS = 'How to market a Medicare business, from the first ad to the renewal. Your join link comes by text and email from The Real Insurance Group. Bring your numbers for the live Q&A.';
 /* ================================================================================== */
 
 const reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -374,7 +378,7 @@ function nextStart(now){
     if(t + EVENT.runMinutes*60000 > now.getTime()) return t;
   }
 }
-const START = nextStart(new Date()), END = START + EVENT.runMinutes*60000;
+const START = nextStart(new Date());
 const pad = n => String(n).padStart(2,'0');
 
 /* date on the ticket + ticket number */
@@ -403,28 +407,10 @@ tick(); setInterval(tick, 1000);
   svg.innerHTML = out;
 })();
 
-/* calendar links */
-const z = t => new Date(t).toISOString().replace(/[-:]/g,'').replace(/\.\d{3}/,'');
-document.getElementById('gcal').href = 'https://calendar.google.com/calendar/render?action=TEMPLATE'
-  + '&text=' + encodeURIComponent(TITLE)
-  + '&dates=' + z(START) + '/' + z(END)
-  + '&details=' + encodeURIComponent(DETAILS)
-  + '&location=' + encodeURIComponent('Online (link sent by text and email)');
-document.getElementById('ics').addEventListener('click', ()=>{
-  const ics = ['BEGIN:VCALENDAR','VERSION:2.0','PRODID:-//The Real Insurance Group//Marketing Machine//EN','BEGIN:VEVENT',
-    'UID:mm-' + START + '@therealinsurancegroup.com','DTSTAMP:' + z(Date.now()),'DTSTART:' + z(START),'DTEND:' + z(END),
-    'SUMMARY:' + TITLE,'DESCRIPTION:' + DETAILS,'LOCATION:Online (link sent by text and email)',
-    'BEGIN:VALARM','TRIGGER:-PT30M','ACTION:DISPLAY','DESCRIPTION:The Marketing Machine starts in 30 minutes','END:VALARM',
-    'END:VEVENT','END:VCALENDAR'].join('\r\n');
-  const a = document.createElement('a');
-  a.href = URL.createObjectURL(new Blob([ics],{type:'text/calendar'}));
-  a.download = 'the-marketing-machine.ics';
-  document.body.appendChild(a); a.click(); a.remove();
-});
-
 /* filmstrip: duplicate once for a seamless loop */
 const strip = document.getElementById('strip');
-strip.innerHTML += strip.innerHTML.replace(/alt="[^"]*"/g,'alt="" aria-hidden="true"');
+const one = strip.innerHTML.replace(/alt="[^"]*"/g,'alt="" aria-hidden="true"');
+strip.innerHTML += one + one + one;
 
 /* entrance + reveals */
 requestAnimationFrame(()=>requestAnimationFrame(()=>{
