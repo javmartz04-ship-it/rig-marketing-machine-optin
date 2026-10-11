@@ -225,6 +225,33 @@ section{position:relative}
 .q .who span{font-family:var(--hand);font-size:24px;color:var(--pen);font-weight:600;line-height:1}
 .q .who small{display:block;font-family:var(--mono);font-size:9.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--t4);margin-top:2px}
 
+
+/* video testimonials */
+.vids{display:grid;grid-template-columns:1fr 1fr;gap:28px;margin-top:56px}
+.vc{display:grid;grid-template-columns:minmax(0,250px) minmax(0,1fr);background:#fff;border:2.5px solid var(--ink);border-radius:18px;box-shadow:7px 7px 0 var(--ink);overflow:hidden}
+.vp{position:relative;aspect-ratio:9/16;background:var(--ink);border-right:2.5px solid var(--ink)}
+.vp video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
+.vp .play{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;gap:10px;padding:18px;
+  background:linear-gradient(180deg,rgba(11,18,32,0) 45%,rgba(11,18,32,.65));color:#fff;transition:opacity .35s var(--ease)}
+.vp .play i{width:68px;height:68px;border-radius:50%;background:var(--yellow);border:2.5px solid var(--ink);box-shadow:4px 4px 0 var(--ink);display:grid;place-items:center;
+  transition:transform .3s var(--ease)}
+.vp .play:hover i{transform:scale(1.07)}
+.vp .play i{width:58px;height:58px}
+.vp .play i svg{width:22px;height:24px;margin-left:4px;fill:var(--ink)}
+.vp .play span{font-family:var(--mono);font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;font-weight:600}
+.vp.on .play{opacity:0;pointer-events:none}
+.vt{padding:30px 28px;display:flex;flex-direction:column}
+.vt .tg{font-family:var(--mono);font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);font-weight:600}
+.vt .st{font-size:clamp(40px,4vw,54px);font-weight:700;letter-spacing:-.045em;line-height:1;margin-top:14px}
+.vt .st small{display:block;font-size:15px;letter-spacing:-.01em;font-weight:600;color:var(--t3);margin-top:8px}
+.vt blockquote{color:var(--t2);font-size:16.5px;margin-top:18px}
+.vt blockquote b{color:var(--t1)}
+.vt .who{margin-top:auto;padding-top:18px;border-top:1.5px dashed var(--line);font-family:var(--hand);font-size:26px;color:var(--pen);font-weight:600;line-height:1}
+.vt .who small{display:block;font-family:var(--mono);font-size:9.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--t4);margin-top:4px;font-weight:400}
+.vids+.qs{margin-top:40px}
+@media (max-width:1080px){.vids{grid-template-columns:1fr;max-width:680px}}
+@media (max-width:720px){.vc{grid-template-columns:1fr}.vp{border-right:0;border-bottom:2.5px solid var(--ink);aspect-ratio:4/5}.vp.on{aspect-ratio:9/16}.vt{padding:24px 22px}}
+
 /* fit */
 .fit .cols{display:grid;grid-template-columns:1fr 1fr;gap:28px;margin-top:56px}
 .col{border:2.5px solid var(--ink);border-radius:18px;padding:34px;background:#fff;box-shadow:6px 6px 0 var(--ink)}
@@ -573,6 +600,28 @@ form .btn{width:100%;justify-content:center;margin-top:6px}
   <div class="wrap">
     <span class="k rv">What agents say</span>
     <h2 class="h2 rv d1">Agents who run the machine, <em class="mk">in their words.</em></h2>
+    <div class="vids">
+      <figure class="vc rv">
+        <div class="vp"><video src="assets/video/barry.mp4" poster="assets/video/barry.jpg" preload="none" playsinline controlslist="nodownload"><track kind="captions" src="assets/video/barry.vtt" srclang="en" label="English" default></video>
+          <button class="play" aria-label="Play Barry's video testimonial"><i><svg viewBox="0 0 24 24"><path d="M6 4l15 8-15 8z"/></svg></i><span>Watch &middot; 0:55</span></button></div>
+        <div class="vt">
+          <span class="tg">Agency owner &middot; 7 employees</span>
+          <p class="st">20 &rarr; 50<small>deals a week</small></p>
+          <blockquote>"Now I have quantity and I have quality. <b>Everything is absolutely running better than it ever has.</b>"</blockquote>
+          <figcaption class="who">Barry<small>Agency owner</small></figcaption>
+        </div>
+      </figure>
+      <figure class="vc rv d1">
+        <div class="vp"><video src="assets/video/justin.mp4" poster="assets/video/justin.jpg" preload="none" playsinline controlslist="nodownload"><track kind="captions" src="assets/video/justin.vtt" srclang="en" label="English" default></video>
+          <button class="play" aria-label="Play Justin Gray's video testimonial"><i><svg viewBox="0 0 24 24"><path d="M6 4l15 8-15 8z"/></svg></i><span>Watch &middot; 0:32</span></button></div>
+        <div class="vt">
+          <span class="tg">Medicare agent &middot; ASL market</span>
+          <p class="st">~$12<small>a lead in the ASL market</small></p>
+          <blockquote>"My dad's deaf and I know sign language. Working with Johnny, <b>we've come up with how to get ASL leads and they're like 12 bucks.</b>"</blockquote>
+          <figcaption class="who">Justin Gray<small>Medicare agent</small></figcaption>
+        </div>
+      </figure>
+    </div>
     <div class="qs">
       <figure class="q rv"><p class="big">$10,000</p><blockquote>"I'm amazed how much Johnny Brock changed my entire business. <b>He made me roughly $10,000 from June to the middle of July</b>, and I've not even scratched the surface yet."</blockquote><figcaption class="who"><i>JC</i><div><span>Jill Coates</span><small>Real Insurance Group community</small></div></figcaption></figure>
       <figure class="q rv d1"><p class="big">Full calendar</p><blockquote>"I started running Facebook ads, hired a virtual assistant, and <b>now have a full calendar year-round.</b>"</blockquote><figcaption class="who"><i>MB</i><div><span>Mindy Baron</span><small>Real Insurance Group community</small></div></figcaption></figure>
@@ -771,6 +820,16 @@ if(!reduced && rot.length>1){
   let i = 0;
   setInterval(()=>{ rot[i].classList.remove('on'); i=(i+1)%rot.length; rot[i].classList.add('on'); }, 3200);
 }
+
+
+/* ---------- video testimonials ---------- */
+const vids=[...document.querySelectorAll('.vp video')];
+document.querySelectorAll('.vp .play').forEach(b=>b.addEventListener('click',()=>{
+  const wrap=b.parentElement, v=wrap.querySelector('video');
+  vids.forEach(o=>{ if(o!==v){ o.pause(); } });
+  wrap.classList.add('on'); v.controls=true; v.play();
+}));
+vids.forEach(v=>v.addEventListener('play',()=>vids.forEach(o=>{ if(o!==v) o.pause(); })));
 
 /* ---------- mobile sticky CTA ---------- */
 const mcta = document.getElementById('mcta'), heroEl = document.getElementById('hero'), finalEl = document.querySelector('.final');

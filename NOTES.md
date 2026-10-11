@@ -35,3 +35,5 @@ the Tuesday sequence). Needs the Saturday webhook + thank-you URL from Javier.
 the 3,459 leads at $1.64 veteran-campaign line is OK on a public page.
 
 **2026-10-11:** first Saturday run went well ("crushed"); it's now an every-Saturday webinar (countdown already rolls weekly). Fixed the cam tile: a generic `.win .screen img` rule (height:100%, object-fit:cover) was cropping Johnny's forehead; the cam img now overrides it with height:auto.
+
+**2026-10-11:** real RIG logo (gold/silver, from Javier) cut out of its black background to a transparent webp (assets/rig-logo.webp). It's in the webinar window bar, the final CTA box and the footer. The old black checkmark logo.webp is gone. The slide screenshots still show the old logo on slide 01.
