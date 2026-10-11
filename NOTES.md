@@ -33,3 +33,5 @@ the Tuesday sequence). Needs the Saturday webhook + thank-you URL from Javier.
 
 **Webhook wired 2026-10-09:** 6c582ec4… (Saturday). **Open:** thank-you page, which Saturday (countdown just targets the next one), whether
 the 3,459 leads at $1.64 veteran-campaign line is OK on a public page.
+
+**2026-10-11:** first Saturday run went well ("crushed"); it's now an every-Saturday webinar (countdown already rolls weekly). Fixed the cam tile: a generic `.win .screen img` rule (height:100%, object-fit:cover) was cropping Johnny's forehead; the cam img now overrides it with height:auto.

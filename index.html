@@ -67,7 +67,6 @@ em.mk{font-style:normal;padding:0 .1em;margin:0 -.04em;border-radius:.12em;-webk
   display:flex;align-items:center;justify-content:space-between;gap:16px;padding:10px 10px 10px 20px;
   background:rgba(255,255,255,.82);backdrop-filter:blur(14px) saturate(1.4);-webkit-backdrop-filter:blur(14px) saturate(1.4);
   border:1.5px solid var(--ink);border-radius:16px;box-shadow:4px 4px 0 var(--ink)}
-.nav img,footer img{filter:brightness(0)}
 .nav img{height:26px;width:auto}
 .nav .when{font-family:var(--mono);font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--t2);display:flex;align-items:center;gap:10px}
 .nav .when i{width:1px;height:16px;background:var(--line)}
@@ -112,7 +111,8 @@ em.mk{font-style:normal;padding:0 .1em;margin:0 -.04em;border-radius:.12em;-webk
 .win .bar{display:flex;align-items:center;gap:10px;padding:10px 14px;color:rgba(255,255,255,.7);font-family:var(--mono);font-size:10.5px;letter-spacing:.14em;text-transform:uppercase}
 .win .bar .dots{display:flex;gap:6px}
 .win .bar .dots i{width:9px;height:9px;border-radius:50%;background:rgba(255,255,255,.2)}
-.win .bar .t{flex:1;text-align:center}
+.win .bar .t{flex:1;display:flex;align-items:center;justify-content:center;gap:10px}
+.win .bar .t img{height:20px;width:auto}
 .win .bar .lv{display:inline-flex;align-items:center;gap:6px;background:#E2433A;color:#fff;padding:3px 8px;border-radius:6px;font-weight:700}
 .win .bar .lv i{width:6px;height:6px;border-radius:50%;background:#fff}
 .win .screen{position:relative;aspect-ratio:16/9;background:#F6F5F1;overflow:hidden}
@@ -242,6 +242,7 @@ section{position:relative}
 .final .box{position:relative;background:var(--ink);color:#fff;border-radius:26px;padding:84px 64px;overflow:hidden;box-shadow:10px 10px 0 var(--yellow),10px 10px 0 2.5px var(--ink);
   display:grid;grid-template-columns:1.2fr .8fr;gap:56px;align-items:center}
 .final .box::before{content:"";position:absolute;inset:0;background:radial-gradient(700px 400px at 90% 0%,rgba(242,185,46,.16),transparent 60%),radial-gradient(500px 400px at 0% 100%,rgba(31,86,196,.22),transparent 60%);pointer-events:none}
+.final .flogo{height:54px;width:auto;margin-bottom:26px}
 .final .k{color:var(--yellow)}
 .final .k::before{box-shadow:0 0 0 2px #fff}
 .final h2{font-size:clamp(36px,5vw,64px);font-weight:700;letter-spacing:-.04em;line-height:1;margin-top:18px}
@@ -260,7 +261,7 @@ section{position:relative}
 
 /* footer */
 footer{border-top:1.5px solid var(--ink);padding:40px 0 120px;text-align:center}
-footer img{height:28px;width:auto;margin:0 auto}
+footer img{height:56px;width:auto;margin:0 auto}
 footer p{font-family:var(--mono);font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--t4);margin-top:16px;line-height:1.8}
 
 /* mobile sticky */
@@ -402,7 +403,7 @@ form .btn{width:100%;justify-content:center;margin-top:6px}
     <div class="stage rv d2" aria-label="Preview of the live masterclass">
       <div class="back"><img src="assets/slides/s01.jpg" alt="Title slide: The Marketing Machine, with Johnny Brock" width="1600" height="900"></div>
       <div class="win">
-        <div class="bar"><span class="dots"><i></i><i></i><i></i></span><span class="t">The Marketing Machine</span><span class="lv"><i></i>Live</span></div>
+        <div class="bar"><span class="dots"><i></i><i></i><i></i></span><span class="t"><img src="assets/rig-logo.webp" alt="Real Insurance Group" width="900" height="477">The Marketing Machine</span><span class="lv"><i></i>Live</span></div>
         <div class="screen" data-rotor>
           <img class="on" src="assets/slides/s05.jpg" alt="Slide: The Medicare Marketing Machine has five parts" width="1600" height="900">
           <img src="assets/slides/s07.jpg" alt="Slide: I sell Medicare is not a market" width="1600" height="900">
@@ -612,6 +613,7 @@ form .btn{width:100%;justify-content:center;margin-top:6px}
   <div class="wrap">
     <div class="box">
       <div style="position:relative">
+        <img class="flogo" src="assets/rig-logo.webp" alt="Real Insurance Group" width="900" height="477">
         <span class="k">Saturday &middot; 11AM EST</span>
         <h2>Build the machine <em>this Saturday.</em></h2>
         <p>Five parts, the real slides, a real account on screen, and a live Q&amp;A until the questions run out.</p>
@@ -639,7 +641,7 @@ form .btn{width:100%;justify-content:center;margin-top:6px}
 
 <footer>
   <div class="wrap">
-    <img src="assets/logo.webp" alt="The Real Insurance Group" width="985" height="225">
+    <img src="assets/rig-logo.webp" alt="Real Insurance Group" width="900" height="477">
     <p>&copy; 2026 The Real Insurance Group. All rights reserved.<br>Not connected with or endorsed by the United States government or the federal Medicare program.</p>
   </div>
 </footer>
