@@ -213,7 +213,7 @@ section{position:relative}
 .facts small{font-family:var(--mono);font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--t3);border-bottom:1.5px solid var(--line);display:flex;align-items:center}
 
 /* proof quotes */
-.qs{display:grid;grid-template-columns:1.25fr 1fr 1fr;gap:26px;margin-top:56px;align-items:start}
+.qs{display:grid;grid-template-columns:1.2fr 1fr;max-width:940px;gap:26px;margin-top:56px;align-items:start}
 .q{background:#fff;border:2.5px solid var(--ink);border-radius:16px;box-shadow:6px 6px 0 var(--ink);padding:28px}
 .q:nth-child(2){transform:translateY(28px)}
 .q .big{font-size:34px;font-weight:700;letter-spacing:-.04em;line-height:1}
@@ -255,7 +255,16 @@ section{position:relative}
 .vc.wide .vt .who{margin-top:24px}
 .vids+.qs{margin-top:40px}
 @media (max-width:1080px){.vids{grid-template-columns:1fr;max-width:680px}}
-@media (max-width:720px){.vc,.vc.wide{grid-template-columns:1fr}.vc.wide .vt{padding:24px 22px}.vc.wide .vt blockquote{font-size:17px}.vp{border-right:0;border-bottom:2.5px solid var(--ink);aspect-ratio:4/5}.vp.on{aspect-ratio:9/16}.vt{padding:24px 22px}}
+.swipe{display:none}
+@media (max-width:720px){
+  .vids{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;gap:16px;margin:40px -16px 0;padding:4px 16px 22px;scrollbar-width:none;-webkit-overflow-scrolling:touch;max-width:none}
+  .vids::-webkit-scrollbar{display:none}
+  .vids .vc,.vids .vc.wide{flex:0 0 86%;min-width:0;scroll-snap-align:center;box-shadow:5px 5px 0 var(--ink);grid-template-columns:minmax(0,1fr)}
+  .vids .vt{min-width:0}
+  .vids .rv{opacity:1;transform:none;filter:none}
+  .swipe{display:block;font-size:24px;margin-top:2px;text-align:right}
+}
+@media (max-width:720px){.vc,.vc.wide{grid-template-columns:1fr}.vc.wide .vt{padding:24px 22px}.vc.wide .vt blockquote{font-size:16.5px}.vp{border-right:0;border-bottom:2.5px solid var(--ink);aspect-ratio:4/5}.vp.on{aspect-ratio:9/16}.vt{padding:24px 22px}}
 
 /* fit */
 .fit .cols{display:grid;grid-template-columns:1fr 1fr;gap:28px;margin-top:56px}
@@ -532,6 +541,16 @@ form .btn.busy{opacity:.85;cursor:wait}
     <span class="k rv">What agents say</span>
     <h2 class="h2 rv d1">Agents who run the machine, <em class="mk">in their words.</em></h2>
     <div class="vids">
+      <figure class="vc wide rv">
+        <div class="vp"><video src="assets/video/eugene.mp4" poster="assets/video/eugene.jpg" preload="none" playsinline controlslist="nodownload"><track kind="captions" src="assets/video/eugene.vtt" srclang="en" label="English" default></video>
+          <button class="play" aria-label="Play Eugene's video testimonial"><i><svg viewBox="0 0 24 24"><path d="M6 4l15 8-15 8z"/></svg></i><span>Watch &middot; 2:38</span></button></div>
+        <div class="vt">
+          <span class="tg">Agency owner &middot; 10+ years in the business</span>
+          <p class="st">300 &rarr; 800+<small>applications in a year, after a 10-year plateau</small></p>
+          <blockquote>"The year prior we barely scratched 300 applications, and then in 2025 <b>I was able to do over 800 applications.</b> If I was starting from scratch, that'd be the guy I would call."</blockquote>
+          <figcaption class="who">Eugene<small>Agency owner</small></figcaption>
+        </div>
+      </figure>
       <figure class="vc rv">
         <div class="vp"><video src="assets/video/barry.mp4" poster="assets/video/barry.jpg" preload="none" playsinline controlslist="nodownload"><track kind="captions" src="assets/video/barry.vtt" srclang="en" label="English" default></video>
           <button class="play" aria-label="Play Barry's video testimonial"><i><svg viewBox="0 0 24 24"><path d="M6 4l15 8-15 8z"/></svg></i><span>Watch &middot; 0:55</span></button></div>
@@ -552,6 +571,26 @@ form .btn.busy{opacity:.85;cursor:wait}
           <figcaption class="who">Justin Gray<small>Medicare agent</small></figcaption>
         </div>
       </figure>
+      <figure class="vc rv">
+        <div class="vp"><video src="assets/video/mindy.mp4" poster="assets/video/mindy.jpg" preload="none" playsinline controlslist="nodownload"><track kind="captions" src="assets/video/mindy.vtt" srclang="en" label="English" default></video>
+          <button class="play" aria-label="Play Mindy Baron's video testimonial"><i><svg viewBox="0 0 24 24"><path d="M6 4l15 8-15 8z"/></svg></i><span>Watch &middot; 1:50</span></button></div>
+        <div class="vt">
+          <span class="tg">Agent &middot; 10+ years, mom, full-time business</span>
+          <p class="st">Full calendar<small>outside of open enrollment, for the first time</small></p>
+          <blockquote>"I'm running Facebook ads, I've added a virtual assistant, and <b>I have a full calendar outside of open enrollment, which never happened before.</b>"</blockquote>
+          <figcaption class="who">Mindy Baron<small>Licensed agent</small></figcaption>
+        </div>
+      </figure>
+      <figure class="vc rv d1">
+        <div class="vp"><video src="assets/video/taggart.mp4" poster="assets/video/taggart.jpg" preload="none" playsinline controlslist="nodownload"><track kind="captions" src="assets/video/taggart.vtt" srclang="en" label="English" default></video>
+          <button class="play" aria-label="Play Taggart Allen's video testimonial"><i><svg viewBox="0 0 24 24"><path d="M6 4l15 8-15 8z"/></svg></i><span>Watch &middot; 0:35</span></button></div>
+        <div class="vt">
+          <span class="tg">New to Medicare</span>
+          <p class="st">Trained daily<small>from brand new to knowing every plan</small></p>
+          <blockquote>"Johnny showed up every single day and trained me consistently. <b>He made sure I understood everything about all different plans.</b>"</blockquote>
+          <figcaption class="who">Taggart Allen<small>Medicare agent</small></figcaption>
+        </div>
+      </figure>
       <figure class="vc wide rv">
         <div class="vp"><video src="assets/video/luke.mp4" poster="assets/video/luke.jpg" preload="none" playsinline controlslist="nodownload"><track kind="captions" src="assets/video/luke.vtt" srclang="en" label="English" default></video>
           <button class="play" aria-label="Play Luke Busani's video testimonial"><i><svg viewBox="0 0 24 24"><path d="M6 4l15 8-15 8z"/></svg></i><span>Watch &middot; 0:42</span></button></div>
@@ -563,10 +602,10 @@ form .btn.busy{opacity:.85;cursor:wait}
         </div>
       </figure>
     </div>
+    <p class="swipe hand">swipe for all 6 stories &rarr;</p>
     <div class="qs">
       <figure class="q rv"><p class="big">$10,000</p><blockquote>"I'm amazed how much Johnny Brock changed my entire business. <b>He made me roughly $10,000 from June to the middle of July</b>, and I've not even scratched the surface yet."</blockquote><figcaption class="who"><i>JC</i><div><span>Jill Coates</span><small>Real Insurance Group community</small></div></figcaption></figure>
-      <figure class="q rv d1"><p class="big">Full calendar</p><blockquote>"I started running Facebook ads, hired a virtual assistant, and <b>now have a full calendar year-round.</b>"</blockquote><figcaption class="who"><i>MB</i><div><span>Mindy Baron</span><small>Real Insurance Group community</small></div></figcaption></figure>
-      <figure class="q rv d2"><p class="big">Secret weapon</p><blockquote>"In the wild world of Medicare, <b>Johnny Brock is my secret weapon.</b>"</blockquote><figcaption class="who"><i>TK</i><div><span>Thomas Key</span><small>Real Insurance Group community</small></div></figcaption></figure>
+      <figure class="q rv d1"><p class="big">Secret weapon</p><blockquote>"In the wild world of Medicare, <b>Johnny Brock is my secret weapon.</b>"</blockquote><figcaption class="who"><i>TK</i><div><span>Thomas Key</span><small>Real Insurance Group community</small></div></figcaption></figure>
     </div>
   </div>
 </section>
