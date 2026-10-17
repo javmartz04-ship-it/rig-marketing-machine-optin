@@ -248,9 +248,13 @@ section{position:relative}
 .vt blockquote b{color:var(--t1)}
 .vt .who{margin-top:auto;padding-top:18px;border-top:1.5px dashed var(--line);font-family:var(--hand);font-size:26px;color:var(--pen);font-weight:600;line-height:1}
 .vt .who small{display:block;font-family:var(--mono);font-size:9.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--t4);margin-top:4px;font-weight:400}
+.vc.wide{grid-column:1/-1;grid-template-columns:minmax(0,250px) minmax(0,1fr)}
+.vc.wide .vt{padding:40px 44px;justify-content:center}
+.vc.wide .vt blockquote{font-size:21px;line-height:1.45;max-width:760px;letter-spacing:-.01em}
+.vc.wide .vt .who{margin-top:24px}
 .vids+.qs{margin-top:40px}
 @media (max-width:1080px){.vids{grid-template-columns:1fr;max-width:680px}}
-@media (max-width:720px){.vc{grid-template-columns:1fr}.vp{border-right:0;border-bottom:2.5px solid var(--ink);aspect-ratio:4/5}.vp.on{aspect-ratio:9/16}.vt{padding:24px 22px}}
+@media (max-width:720px){.vc,.vc.wide{grid-template-columns:1fr}.vc.wide .vt{padding:24px 22px}.vc.wide .vt blockquote{font-size:17px}.vp{border-right:0;border-bottom:2.5px solid var(--ink);aspect-ratio:4/5}.vp.on{aspect-ratio:9/16}.vt{padding:24px 22px}}
 
 /* fit */
 .fit .cols{display:grid;grid-template-columns:1fr 1fr;gap:28px;margin-top:56px}
@@ -323,6 +327,9 @@ form{margin-top:24px;display:grid;gap:14px}
 .fld label{position:absolute;left:17px;top:17px;color:var(--t3);font-size:16px;pointer-events:none;transition:all .2s var(--ease)}
 .fld input:focus+label,.fld input:not(:placeholder-shown)+label{top:7px;font-size:11px;font-family:var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--gold);font-weight:600}
 form .btn{width:100%;justify-content:center;margin-top:6px}
+form .btn.busy{opacity:.85;cursor:wait}
+.spin{width:17px;height:17px;border-radius:50%;border:2.5px solid rgba(11,18,32,.25);border-top-color:var(--ink);display:inline-block;animation:spin .7s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
 .mfine{font-size:13px;color:var(--t4);margin-top:14px;text-align:center}
 .err{font-size:14px;color:#B3261E;margin-top:10px;text-align:center;display:none}
 .mo-done{display:none;text-align:center;padding-top:30px}
@@ -635,6 +642,16 @@ form .btn{width:100%;justify-content:center;margin-top:6px}
           <figcaption class="who">Justin Gray<small>Medicare agent</small></figcaption>
         </div>
       </figure>
+      <figure class="vc wide rv">
+        <div class="vp"><video src="assets/video/luke.mp4" poster="assets/video/luke.jpg" preload="none" playsinline controlslist="nodownload"><track kind="captions" src="assets/video/luke.vtt" srclang="en" label="English" default></video>
+          <button class="play" aria-label="Play Luke Busani's video testimonial"><i><svg viewBox="0 0 24 24"><path d="M6 4l15 8-15 8z"/></svg></i><span>Watch &middot; 0:42</span></button></div>
+        <div class="vt">
+          <span class="tg">Medicare agent &middot; 4 years in the industry</span>
+          <p class="st">Full control<small>of his own marketing, after years of buying leads</small></p>
+          <blockquote>"I've been in the industry the last four years, paying for live transfers, direct mail leads, Facebook leads, you name it. <b>But being able to have full control over my marketing has really changed my business.</b>"</blockquote>
+          <figcaption class="who">Luke Busani<small>Medicare agent</small></figcaption>
+        </div>
+      </figure>
     </div>
     <div class="qs">
       <figure class="q rv"><p class="big">$10,000</p><blockquote>"I'm amazed how much Johnny Brock changed my entire business. <b>He made me roughly $10,000 from June to the middle of July</b>, and I've not even scratched the surface yet."</blockquote><figcaption class="who"><i>JC</i><div><span>Jill Coates</span><small>Real Insurance Group community</small></div></figcaption></figure>
@@ -879,18 +896,21 @@ f.addEventListener('submit',e=>{
     full_name: name.value.trim(), email: email.value.trim(), phone: phone.value.trim(),
     source: 'marketing-machine-webinar', event: 'Saturday 11AM EST', page: location.href, submitted_at: new Date().toISOString()
   };
-  const btn = f.querySelector('button[type="submit"]'), label = btn.textContent;
-  btn.disabled = true; btn.style.opacity = .7; btn.textContent = 'Reserving Your Seat…';
-  const done = ()=>{ if(THANKS){ location.href = THANKS; } else { mo.classList.add('done'); } };
-  const restore = ()=>{ btn.disabled=false; btn.style.opacity=''; btn.textContent=label; };
-  if(!WEBHOOK){ setTimeout(()=>{ restore(); done(); }, 600); return; }
-  fetch(WEBHOOK,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(payload)})
-    .then(r=>{ if(!r.ok) throw new Error('HTTP '+r.status); restore(); done(); })
-    .catch(()=>{
-      fetch(WEBHOOK,{method:'POST',mode:'no-cors',headers:{'Content-Type':'text/plain'},body:JSON.stringify(payload)})
-        .then(()=>{ restore(); done(); })
-        .catch(()=>{ restore(); err.textContent = "That didn't go through. Check your connection and try again."; err.style.display='block'; });
-    });
+  const btn = f.querySelector('button[type="submit"]');
+  btn.disabled = true; btn.classList.add('busy');
+  btn.innerHTML = '<span class="spin" aria-hidden="true"></span>Reserving Your Seat';
+  let gone = false;
+  const done = ()=>{ if(gone) return; gone = true; if(THANKS){ location.href = THANKS; } else { mo.classList.add('done'); } };
+  if(!WEBHOOK){ setTimeout(done, 600); return; }
+  const body = JSON.stringify(payload);
+  /* backup send: a simple request with keepalive, so it finishes even while the page is leaving */
+  const backup = ()=>{ try{ fetch(WEBHOOK,{method:'POST',mode:'no-cors',keepalive:true,headers:{'Content-Type':'text/plain'},body:body}); }catch(_){} };
+  /* never strand anyone: whatever the network does, they reach the thank-you page within 6 seconds */
+  const guard = setTimeout(()=>{ backup(); done(); }, 6000);
+  fetch(WEBHOOK,{method:'POST',headers:{'Content-Type':'application/json'},body:body})
+    .then(r=>{ if(!r.ok) throw new Error('HTTP '+r.status); })
+    .catch(()=>{ backup(); return new Promise(r=>setTimeout(r,500)); })
+    .finally(()=>{ clearTimeout(guard); setTimeout(done, 150); });
 });
 </script>
 </body>
