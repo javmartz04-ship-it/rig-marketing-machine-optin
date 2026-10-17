@@ -177,6 +177,7 @@ section{position:relative}
 .mech .hand{font-size:32px;margin-top:56px}
 
 /* agenda */
+.ag{border-top:1.5px solid var(--ink)}
 .ag .head{max-width:760px}
 .ag .rows{margin-top:56px;border-top:2px solid var(--ink)}
 .ag .row{display:grid;grid-template-columns:80px 1fr 1.05fr;gap:40px;padding:44px 0;border-bottom:1.5px solid var(--line);align-items:center}
@@ -475,9 +476,9 @@ form .btn.busy{opacity:.85;cursor:wait}
 <!-- ===== proof strip ===== -->
 <div class="proof" aria-label="Johnny Brock by the numbers">
   <div class="wrap">
-    <div class="st rv"><b data-count="2020" data-plain>2020</b><small>Started serving<br>Boomers</small></div>
-    <div class="st rv d1"><b data-count="137" data-pre="$" data-suf="K">$137K</b><small>In my first<br>15 months</small></div>
-    <div class="st rv d2"><b data-count="4000" data-suf="+">4,000+</b><small>Policies<br>submitted</small></div>
+    <div class="st rv"><b data-count="100" data-pre="$" data-suf="K+">$100K+</b><small>Monthly<br>ad spend</small></div>
+    <div class="st rv d1"><b data-count="4000" data-suf="+">4,000+</b><small>Policies<br>submitted</small></div>
+    <div class="st rv d2"><b data-count="2026" data-plain>2026</b><small>MedicareCon<br>speaker</small></div>
   </div>
 </div>
 
@@ -522,6 +523,51 @@ form .btn.busy{opacity:.85;cursor:wait}
       <div class="part rv d5"><div class="tile dark"><svg viewBox="0 0 120 120"><circle cx="60" cy="60" r="40"/><path d="M73 45c-3-6-26-8-26 4s26 6 26 19-23 12-27 4M60 32v56"/></svg></div><p class="pn">=</p><h3>Clients</h3><p>Every part does its job, every month.</p></div>
     </div>
     <p class="hand rv">one campaign. one person. one problem. that's where it starts.</p>
+  </div>
+</section>
+
+<!-- ===== proof ===== -->
+<section class="sec">
+  <div class="wrap">
+    <span class="k rv">What agents say</span>
+    <h2 class="h2 rv d1">Agents who run the machine, <em class="mk">in their words.</em></h2>
+    <div class="vids">
+      <figure class="vc rv">
+        <div class="vp"><video src="assets/video/barry.mp4" poster="assets/video/barry.jpg" preload="none" playsinline controlslist="nodownload"><track kind="captions" src="assets/video/barry.vtt" srclang="en" label="English" default></video>
+          <button class="play" aria-label="Play Barry's video testimonial"><i><svg viewBox="0 0 24 24"><path d="M6 4l15 8-15 8z"/></svg></i><span>Watch &middot; 0:55</span></button></div>
+        <div class="vt">
+          <span class="tg">Agency owner &middot; 7 employees</span>
+          <p class="st">Scaled to 50<small>deals a week, up from 20</small></p>
+          <blockquote>"Now I have quantity and I have quality. <b>Everything is absolutely running better than it ever has.</b>"</blockquote>
+          <figcaption class="who">Barry<small>Agency owner</small></figcaption>
+        </div>
+      </figure>
+      <figure class="vc rv d1">
+        <div class="vp"><video src="assets/video/justin.mp4" poster="assets/video/justin.jpg" preload="none" playsinline controlslist="nodownload"><track kind="captions" src="assets/video/justin.vtt" srclang="en" label="English" default></video>
+          <button class="play" aria-label="Play Justin Gray's video testimonial"><i><svg viewBox="0 0 24 24"><path d="M6 4l15 8-15 8z"/></svg></i><span>Watch &middot; 0:32</span></button></div>
+        <div class="vt">
+          <span class="tg">Medicare agent &middot; ASL market</span>
+          <p class="st">$12<small>booked appointments in the ASL market</small></p>
+          <blockquote>"My dad's deaf and I know sign language. Working with Johnny, <b>we've come up with how to get ASL leads and they're like 12 bucks.</b>"</blockquote>
+          <figcaption class="who">Justin Gray<small>Medicare agent</small></figcaption>
+        </div>
+      </figure>
+      <figure class="vc wide rv">
+        <div class="vp"><video src="assets/video/luke.mp4" poster="assets/video/luke.jpg" preload="none" playsinline controlslist="nodownload"><track kind="captions" src="assets/video/luke.vtt" srclang="en" label="English" default></video>
+          <button class="play" aria-label="Play Luke Busani's video testimonial"><i><svg viewBox="0 0 24 24"><path d="M6 4l15 8-15 8z"/></svg></i><span>Watch &middot; 0:42</span></button></div>
+        <div class="vt">
+          <span class="tg">Medicare agent &middot; 4 years in the industry</span>
+          <p class="st">Full control<small>of his own marketing, after years of buying leads</small></p>
+          <blockquote>"I've been in the industry the last four years, paying for live transfers, direct mail leads, Facebook leads, you name it. <b>But being able to have full control over my marketing has really changed my business.</b>"</blockquote>
+          <figcaption class="who">Luke Busani<small>Medicare agent</small></figcaption>
+        </div>
+      </figure>
+    </div>
+    <div class="qs">
+      <figure class="q rv"><p class="big">$10,000</p><blockquote>"I'm amazed how much Johnny Brock changed my entire business. <b>He made me roughly $10,000 from June to the middle of July</b>, and I've not even scratched the surface yet."</blockquote><figcaption class="who"><i>JC</i><div><span>Jill Coates</span><small>Real Insurance Group community</small></div></figcaption></figure>
+      <figure class="q rv d1"><p class="big">Full calendar</p><blockquote>"I started running Facebook ads, hired a virtual assistant, and <b>now have a full calendar year-round.</b>"</blockquote><figcaption class="who"><i>MB</i><div><span>Mindy Baron</span><small>Real Insurance Group community</small></div></figcaption></figure>
+      <figure class="q rv d2"><p class="big">Secret weapon</p><blockquote>"In the wild world of Medicare, <b>Johnny Brock is my secret weapon.</b>"</blockquote><figcaption class="who"><i>TK</i><div><span>Thomas Key</span><small>Real Insurance Group community</small></div></figcaption></figure>
+    </div>
   </div>
 </section>
 
@@ -612,51 +658,6 @@ form .btn.busy{opacity:.85;cursor:wait}
         <b>$137K</b><small>In my first 15 months</small>
         <b>4,000+</b><small>Policies submitted</small>
       </div>
-    </div>
-  </div>
-</section>
-
-<!-- ===== proof ===== -->
-<section class="sec">
-  <div class="wrap">
-    <span class="k rv">What agents say</span>
-    <h2 class="h2 rv d1">Agents who run the machine, <em class="mk">in their words.</em></h2>
-    <div class="vids">
-      <figure class="vc rv">
-        <div class="vp"><video src="assets/video/barry.mp4" poster="assets/video/barry.jpg" preload="none" playsinline controlslist="nodownload"><track kind="captions" src="assets/video/barry.vtt" srclang="en" label="English" default></video>
-          <button class="play" aria-label="Play Barry's video testimonial"><i><svg viewBox="0 0 24 24"><path d="M6 4l15 8-15 8z"/></svg></i><span>Watch &middot; 0:55</span></button></div>
-        <div class="vt">
-          <span class="tg">Agency owner &middot; 7 employees</span>
-          <p class="st">Scaled to 50<small>deals a week, up from 20</small></p>
-          <blockquote>"Now I have quantity and I have quality. <b>Everything is absolutely running better than it ever has.</b>"</blockquote>
-          <figcaption class="who">Barry<small>Agency owner</small></figcaption>
-        </div>
-      </figure>
-      <figure class="vc rv d1">
-        <div class="vp"><video src="assets/video/justin.mp4" poster="assets/video/justin.jpg" preload="none" playsinline controlslist="nodownload"><track kind="captions" src="assets/video/justin.vtt" srclang="en" label="English" default></video>
-          <button class="play" aria-label="Play Justin Gray's video testimonial"><i><svg viewBox="0 0 24 24"><path d="M6 4l15 8-15 8z"/></svg></i><span>Watch &middot; 0:32</span></button></div>
-        <div class="vt">
-          <span class="tg">Medicare agent &middot; ASL market</span>
-          <p class="st">$12<small>booked appointments in the ASL market</small></p>
-          <blockquote>"My dad's deaf and I know sign language. Working with Johnny, <b>we've come up with how to get ASL leads and they're like 12 bucks.</b>"</blockquote>
-          <figcaption class="who">Justin Gray<small>Medicare agent</small></figcaption>
-        </div>
-      </figure>
-      <figure class="vc wide rv">
-        <div class="vp"><video src="assets/video/luke.mp4" poster="assets/video/luke.jpg" preload="none" playsinline controlslist="nodownload"><track kind="captions" src="assets/video/luke.vtt" srclang="en" label="English" default></video>
-          <button class="play" aria-label="Play Luke Busani's video testimonial"><i><svg viewBox="0 0 24 24"><path d="M6 4l15 8-15 8z"/></svg></i><span>Watch &middot; 0:42</span></button></div>
-        <div class="vt">
-          <span class="tg">Medicare agent &middot; 4 years in the industry</span>
-          <p class="st">Full control<small>of his own marketing, after years of buying leads</small></p>
-          <blockquote>"I've been in the industry the last four years, paying for live transfers, direct mail leads, Facebook leads, you name it. <b>But being able to have full control over my marketing has really changed my business.</b>"</blockquote>
-          <figcaption class="who">Luke Busani<small>Medicare agent</small></figcaption>
-        </div>
-      </figure>
-    </div>
-    <div class="qs">
-      <figure class="q rv"><p class="big">$10,000</p><blockquote>"I'm amazed how much Johnny Brock changed my entire business. <b>He made me roughly $10,000 from June to the middle of July</b>, and I've not even scratched the surface yet."</blockquote><figcaption class="who"><i>JC</i><div><span>Jill Coates</span><small>Real Insurance Group community</small></div></figcaption></figure>
-      <figure class="q rv d1"><p class="big">Full calendar</p><blockquote>"I started running Facebook ads, hired a virtual assistant, and <b>now have a full calendar year-round.</b>"</blockquote><figcaption class="who"><i>MB</i><div><span>Mindy Baron</span><small>Real Insurance Group community</small></div></figcaption></figure>
-      <figure class="q rv d2"><p class="big">Secret weapon</p><blockquote>"In the wild world of Medicare, <b>Johnny Brock is my secret weapon.</b>"</blockquote><figcaption class="who"><i>TK</i><div><span>Thomas Key</span><small>Real Insurance Group community</small></div></figcaption></figure>
     </div>
   </div>
 </section>
