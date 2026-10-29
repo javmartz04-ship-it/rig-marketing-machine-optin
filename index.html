@@ -817,7 +817,7 @@ form .btn.busy{opacity:.85;cursor:wait}
             (the form shows the success state and sends nothing).
    THANKS:  thank-you page to redirect to after a real submit. Empty = stay on the success state. */
 const EVENT   = { weekday:6, hour:11, min:0, runMinutes:90 };
-const WEBHOOK = 'https://services.leadconnectorhq.com/hooks/6R8qbbSpBWNiFPaF6WsI/webhook-trigger/6c582ec4-e4e4-4aaa-8006-44a10b10432d';
+const WEBHOOK = 'https://services.leadconnectorhq.com/hooks/6R8qbbSpBWNiFPaF6WsI/webhook-trigger/a94cc5bb-5047-4289-96e3-dfb7c76a1a0d';
 const THANKS  = 'https://therealinsurancegroup.com/confirmed';
 /* ================================= */
 
@@ -936,7 +936,7 @@ f.addEventListener('submit',e=>{
   }
   const payload = {
     full_name: name.value.trim(), email: email.value.trim(), phone: phone.value.trim(),
-    source: 'marketing-machine-webinar', event: 'Saturday 11AM EST', page: location.href, submitted_at: new Date().toISOString()
+    source: 'marketing-machine-webinar', variant: 'B', event: 'Saturday 11AM EST', page: location.href, submitted_at: new Date().toISOString()
   };
   const btn = f.querySelector('button[type="submit"]');
   btn.disabled = true; btn.classList.add('busy');
