@@ -3,13 +3,13 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>You're In | The Marketing Machine, Saturday 11AM EST</title>
+<title>You're In | The Marketing Machine, Black Friday, Saturday, Nov 28, 11AM EST</title>
 <meta name="robots" content="noindex">
-<link rel="preload" href="assets/fonts/InterTight.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="https://javmartz04-ship-it.github.io/rig-marketing-machine-optin/assets/fonts/InterTight.woff2" as="font" type="font/woff2" crossorigin>
 <style>
-@font-face{font-family:'Inter Tight';src:url(assets/fonts/InterTight.woff2) format('woff2');font-weight:100 900;font-display:swap}
-@font-face{font-family:'Caveat';src:url(assets/fonts/Caveat.woff2) format('woff2');font-weight:400 700;font-display:swap}
-@font-face{font-family:'JetBrains Mono';src:url(assets/fonts/JetBrainsMono.woff2) format('woff2');font-weight:100 800;font-display:swap}
+@font-face{font-family:'Inter Tight';src:url(https://javmartz04-ship-it.github.io/rig-marketing-machine-optin/assets/fonts/InterTight.woff2) format('woff2');font-weight:100 900;font-display:swap}
+@font-face{font-family:'Caveat';src:url(https://javmartz04-ship-it.github.io/rig-marketing-machine-optin/assets/fonts/Caveat.woff2) format('woff2');font-weight:400 700;font-display:swap}
+@font-face{font-family:'JetBrains Mono';src:url(https://javmartz04-ship-it.github.io/rig-marketing-machine-optin/assets/fonts/JetBrainsMono.woff2) format('woff2');font-weight:100 800;font-display:swap}
 
 /* ===== tokens: same as the opt-in (The Marketing Machine deck) ===== */
 :root{
@@ -234,16 +234,71 @@ footer p{font-family:var(--mono);font-size:10.5px;letter-spacing:.12em;text-tran
   em.mk{background-size:100% 74%}
   .stamp{opacity:.9;transform:rotate(-14deg)}
 }
+/* ===== black friday ===== */
+.bf{background:var(--ink);color:#fff;position:relative;z-index:5;overflow:hidden}
+.bf .in{max-width:1200px;margin:0 auto;padding:11px 20px;display:flex;align-items:center;justify-content:center;gap:14px;flex-wrap:wrap;
+  font-family:var(--mono);font-size:11.5px;letter-spacing:.16em;text-transform:uppercase;font-weight:600;text-align:center}
+.bf .in b{color:var(--yellow);font-weight:700}
+.bf .in svg{width:16px;height:16px;color:var(--yellow);flex:none}
+.bf .sp{width:5px;height:5px;background:var(--yellow);transform:rotate(45deg);flex:none}
+.bf::after{content:"";position:absolute;left:0;right:0;bottom:0;height:3px;background:repeating-linear-gradient(90deg,var(--yellow) 0 18px,transparent 18px 30px)}
+.bftag{position:absolute;z-index:6;right:-14px;top:-18px;transform:rotate(7deg);background:var(--yellow);color:var(--ink);border:2.5px solid var(--ink);
+  border-radius:12px 12px 12px 12px;box-shadow:5px 5px 0 var(--ink);padding:12px 18px 12px 30px;text-align:left;animation:sway 5s ease-in-out infinite;transform-origin:20% 0}
+.bftag::before{content:"";position:absolute;left:11px;top:50%;width:9px;height:9px;margin-top:-5px;border-radius:50%;background:var(--paper);border:2px solid var(--ink)}
+.bftag small{display:block;font-family:var(--mono);font-size:9.5px;letter-spacing:.18em;text-transform:uppercase;font-weight:700}
+.bftag b{display:block;font-size:30px;font-weight:800;letter-spacing:-.04em;line-height:1;margin-top:3px}
+@keyframes sway{0%,100%{transform:rotate(7deg)}50%{transform:rotate(4deg)}}
+.gift{display:flex;align-items:center;gap:12px;margin-top:22px;max-width:470px;background:#fff;border:1.5px dashed var(--ink);border-radius:12px;padding:12px 16px;font-size:15px;color:var(--t2);line-height:1.4}
+.gift svg{width:26px;height:26px;flex:none;color:var(--gold)}
+.gift b{color:var(--t1);font-weight:650}
+.bye .gift{background:rgba(255,255,255,.06);border-color:rgba(242,185,46,.6);color:rgba(255,255,255,.75)}
+.bye .gift b{color:#fff}
+.bye .gift svg{color:var(--yellow)}
+@media (max-width:720px){
+  .bf .in{font-size:9.5px;letter-spacing:.1em;gap:8px;padding:9px 14px}
+  .bf .hide-m{display:none}
+  .bftag{right:-4px;top:-14px;padding:9px 13px 9px 24px}
+  .bftag::before{left:8px}
+  .bftag b{font-size:22px}
+}
+
+/* ===== festive gifts ===== */
+.sec,.bye,.film{position:relative}
+.gifts{position:absolute;inset:0;pointer-events:none;z-index:1;overflow:hidden}
+.hero>.wrap,.sec>.wrap,.film>.wrap,.bye>.wrap{position:relative;z-index:2}
+.gb{position:absolute;filter:drop-shadow(3px 3px 0 var(--ink));animation:bob 6s ease-in-out infinite}
+.bye .box .gifts{z-index:0}
+.bye .box .gb{filter:drop-shadow(3px 3px 0 rgba(242,185,46,.55))}
+.bye .box .gb svg *{stroke:#F6F5F1}
+.gb svg{display:block;width:100%;height:auto;overflow:visible}
+@keyframes bob{0%,100%{translate:0 0}50%{translate:0 -10px}}
+.bfm{background:var(--yellow);border-top:2px solid var(--ink);border-bottom:2px solid var(--ink);overflow:hidden;white-space:nowrap}
+.bfm .tr{display:inline-flex;align-items:center;gap:26px;padding:14px 0;animation:mq 38s linear infinite;
+  font-family:var(--mono);font-size:13px;letter-spacing:.18em;text-transform:uppercase;font-weight:600;color:var(--ink)}
+.bfm .tr b{font-weight:800}
+.bfm svg{width:20px;height:20px;flex:none}
+@keyframes mq{to{transform:translateX(-50%)}}
+.btn:hover .bi{transform:rotate(-12deg) scale(1.08)}
+@media (max-width:720px){.bf .sp{display:none}.gb.dm{display:none}.bfm .tr{font-size:11px;gap:18px;padding:11px 0}}
+
+.bftag{right:auto;left:-18px;top:-96px;transform:rotate(-8deg);animation-name:sway2}
+@keyframes sway2{0%,100%{transform:rotate(-8deg)}50%{transform:rotate(-5deg)}}
+.tix{position:relative}
+@media (max-width:720px){.tix{padding-top:84px}.bftag{top:-2px;left:-4px}}
+.bye .gift{background:rgba(255,255,255,.06);border-color:rgba(242,185,46,.6);color:rgba(255,255,255,.75);position:relative}
+.bye .gift b{color:#fff}
+.bye .gift svg{color:var(--yellow)}
 </style>
 </head>
 <body>
 
+<div class="bf" role="note"><div class="in"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="9" width="18" height="12" rx="1.5"/><path d="M2 9h20M12 9v12M12 9c-2-4-7-5-7-2s4 2 7 2c3 0 7 1 7-2s-5-2-7 2"/></svg><span><b>Black Friday Special</b></span><span class="sp"></span><span>Live attendees get special gifts</span><span class="sp hide-m"></span><span class="hide-m">Saturday, Nov 28, 11AM EST</span></div></div>
 <main>
 <!-- ===== hero: confirmation + the ticket ===== -->
 <section class="hero" id="hero">
   <div class="wrap">
     <div>
-      <span class="ok"><i><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg></i>Seat reserved</span>
+      <span class="ok"><i><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg></i>Seat reserved for Black Friday</span>
       <h1 class="h1">
         <span class="ln"><span>You're in.</span></span>
         <span class="ln"><span>See you <em class="mk">Saturday at 11.</em></span></span>
@@ -252,17 +307,19 @@ footer p{font-family:var(--mono);font-size:10.5px;letter-spacing:.12em;text-tran
       <ol class="next">
         <li><span>Right now</span><b>Your confirmation</b><em>By text and email, in the next few minutes.</em></li>
         <li><span>Before Saturday</span><b>Updates and reminders</b><em>So the day doesn't sneak up on you.</em></li>
-        <li><span>Saturday, day of</span><b>Your link to join</b><em>Click it, and you're in the room at 11AM EST.</em></li>
+        <li><span>Saturday, day of</span><b>Your link to join</b><em>Click it, and you're in the room at 11AM EST. Gifts go to live attendees.</em></li>
       </ol>
-      <p class="risk"><b>Free</b> &nbsp;&middot;&nbsp; Live online &nbsp;&middot;&nbsp; Saturday 11AM EST</p>
+      <p class="gift"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="9" width="18" height="12" rx="1.5"/><path d="M2 9h20M12 9v12M12 9c-2-4-7-5-7-2s4 2 7 2c3 0 7 1 7-2s-5-2-7 2"/></svg><span><b>Black Friday, live only:</b> show up and get special gifts when you join, plus 65% off. Saturday only.</span></p>
+      <p class="risk"><b>Free</b>, live online, Saturday, Nov 28, 11AM EST</p>
     </div>
 
     <div class="tix rv d2">
+      <div class="bftag" aria-label="Black Friday, 65% off for live attendees"><small>Black Friday</small><b>65% Off</b><small>Live attendees</small></div>
       <div class="ticket" id="ticket">
         <div class="t-main">
-          <div class="t-top"><img src="assets/rig-logo.webp" alt="Real Insurance Group" width="900" height="477"><span>Admit one</span></div>
+          <div class="t-top"><img src="https://javmartz04-ship-it.github.io/rig-marketing-machine-optin/assets/rig-logo.webp" alt="Real Insurance Group" width="900" height="477"><span>Admit one</span></div>
           <p class="t-name">The Marketing <em>Machine</em></p>
-          <p class="t-by">Free live masterclass with Johnny Brock</p>
+          <p class="t-by">Black Friday live masterclass with Johnny Brock</p>
           <div class="t-fields">
             <div><small>Date</small><b data-date>Saturday</b></div>
             <div><small>Time</small><b>11:00 AM EST</b></div>
@@ -288,6 +345,7 @@ footer p{font-family:var(--mono);font-size:10.5px;letter-spacing:.12em;text-tran
   </div>
 </section>
 
+<div class="bfm" aria-label="Black Friday special: special gifts and 65% off for live attendees, Saturday, Nov 28, 11AM EST"><div class="tr" aria-hidden="true"><span><b>Black Friday Special</b></span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="9" width="18" height="12" rx="1.5"/><path d="M2 9h20M12 9v12M12 9c-2-4-7-5-7-2s4 2 7 2c3 0 7 1 7-2s-5-2-7 2"/></svg><span>Special gifts for live attendees</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="9" width="18" height="12" rx="1.5"/><path d="M2 9h20M12 9v12M12 9c-2-4-7-5-7-2s4 2 7 2c3 0 7 1 7-2s-5-2-7 2"/></svg><span><b>65% Off</b></span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="9" width="18" height="12" rx="1.5"/><path d="M2 9h20M12 9v12M12 9c-2-4-7-5-7-2s4 2 7 2c3 0 7 1 7-2s-5-2-7 2"/></svg><span>Saturday, Nov 28, 11AM EST</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="9" width="18" height="12" rx="1.5"/><path d="M2 9h20M12 9v12M12 9c-2-4-7-5-7-2s4 2 7 2c3 0 7 1 7-2s-5-2-7 2"/></svg><span><b>Black Friday Special</b></span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="9" width="18" height="12" rx="1.5"/><path d="M2 9h20M12 9v12M12 9c-2-4-7-5-7-2s4 2 7 2c3 0 7 1 7-2s-5-2-7 2"/></svg><span>Special gifts for live attendees</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="9" width="18" height="12" rx="1.5"/><path d="M2 9h20M12 9v12M12 9c-2-4-7-5-7-2s4 2 7 2c3 0 7 1 7-2s-5-2-7 2"/></svg><span><b>65% Off</b></span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="9" width="18" height="12" rx="1.5"/><path d="M2 9h20M12 9v12M12 9c-2-4-7-5-7-2s4 2 7 2c3 0 7 1 7-2s-5-2-7 2"/></svg><span>Saturday, Nov 28, 11AM EST</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="9" width="18" height="12" rx="1.5"/><path d="M2 9h20M12 9v12M12 9c-2-4-7-5-7-2s4 2 7 2c3 0 7 1 7-2s-5-2-7 2"/></svg><span><b>Black Friday Special</b></span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="9" width="18" height="12" rx="1.5"/><path d="M2 9h20M12 9v12M12 9c-2-4-7-5-7-2s4 2 7 2c3 0 7 1 7-2s-5-2-7 2"/></svg><span>Special gifts for live attendees</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="9" width="18" height="12" rx="1.5"/><path d="M2 9h20M12 9v12M12 9c-2-4-7-5-7-2s4 2 7 2c3 0 7 1 7-2s-5-2-7 2"/></svg><span><b>65% Off</b></span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="9" width="18" height="12" rx="1.5"/><path d="M2 9h20M12 9v12M12 9c-2-4-7-5-7-2s4 2 7 2c3 0 7 1 7-2s-5-2-7 2"/></svg><span>Saturday, Nov 28, 11AM EST</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="9" width="18" height="12" rx="1.5"/><path d="M2 9h20M12 9v12M12 9c-2-4-7-5-7-2s4 2 7 2c3 0 7 1 7-2s-5-2-7 2"/></svg><span><b>Black Friday Special</b></span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="9" width="18" height="12" rx="1.5"/><path d="M2 9h20M12 9v12M12 9c-2-4-7-5-7-2s4 2 7 2c3 0 7 1 7-2s-5-2-7 2"/></svg><span>Special gifts for live attendees</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="9" width="18" height="12" rx="1.5"/><path d="M2 9h20M12 9v12M12 9c-2-4-7-5-7-2s4 2 7 2c3 0 7 1 7-2s-5-2-7 2"/></svg><span><b>65% Off</b></span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="9" width="18" height="12" rx="1.5"/><path d="M2 9h20M12 9v12M12 9c-2-4-7-5-7-2s4 2 7 2c3 0 7 1 7-2s-5-2-7 2"/></svg><span>Saturday, Nov 28, 11AM EST</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="9" width="18" height="12" rx="1.5"/><path d="M2 9h20M12 9v12M12 9c-2-4-7-5-7-2s4 2 7 2c3 0 7 1 7-2s-5-2-7 2"/></svg></div></div>
 <!-- ===== before Saturday ===== -->
 <section class="sec steps">
   <div class="wrap grid">
@@ -321,12 +379,12 @@ footer p{font-family:var(--mono);font-size:10.5px;letter-spacing:.12em;text-tran
       <span class="k rv">A look at Saturday</span>
       <h2 class="h2 rv d1">A peek at <em class="mk">the slides.</em></h2>
     </div>
-    <p class="hand rv d2">market &rarr; message &rarr; ads &rarr; funnel &rarr; backend</p>
+    <p class="hand rv d2">market, message, ads, funnel, backend</p>
   </div>
   <div class="strip" id="strip">
-    <div class="s"><img src="assets/slides/s05.jpg" alt="Slide: the Medicare Marketing Machine has five parts" width="1600" height="900"></div>
-    <div class="s"><img src="assets/slides/s07.jpg" alt="Slide: I sell Medicare is not a market" width="1600" height="900"></div>
-    <div class="s"><img src="assets/slides/s11.jpg" alt="Slide: every ad that works has the same four parts" width="1600" height="900"></div>
+    <div class="s"><img src="https://javmartz04-ship-it.github.io/rig-marketing-machine-optin/assets/slides/s05.jpg" alt="Slide: the Medicare Marketing Machine has five parts" width="1600" height="900"></div>
+    <div class="s"><img src="https://javmartz04-ship-it.github.io/rig-marketing-machine-optin/assets/slides/s07.jpg" alt="Slide: I sell Medicare is not a market" width="1600" height="900"></div>
+    <div class="s"><img src="https://javmartz04-ship-it.github.io/rig-marketing-machine-optin/assets/slides/s11.jpg" alt="Slide: every ad that works has the same four parts" width="1600" height="900"></div>
   </div>
 </section>
 
@@ -335,12 +393,13 @@ footer p{font-family:var(--mono);font-size:10.5px;letter-spacing:.12em;text-tran
   <div class="wrap">
     <div class="box rv">
       <div class="txt">
-        <span class="k">Saturday &middot; 11AM EST</span>
+        <span class="k">Black Friday, Saturday, Nov 28, 11AM EST</span>
         <h2>Bring your questions.<br><em>I'll bring the machine.</em></h2>
         <p>Five parts, a real account on screen, and a live Q&amp;A at the end. Save the date and I'll see you there.</p>
+        <p class="gift"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="9" width="18" height="12" rx="1.5"/><path d="M2 9h20M12 9v12M12 9c-2-4-7-5-7-2s4 2 7 2c3 0 7 1 7-2s-5-2-7 2"/></svg><span><b>Be there live:</b> special gifts when you join, plus 65% off. Saturday only.</span></p>
         <p class="sig">Johnny Brock<small>Founder &amp; CEO, The Real Insurance Group</small></p>
       </div>
-      <div class="jb"><img src="assets/johnny-main.webp" alt="Johnny Brock" width="640" height="824"></div>
+      <div class="jb"><img src="https://javmartz04-ship-it.github.io/rig-marketing-machine-optin/assets/johnny-main.webp" alt="Johnny Brock" width="640" height="824"></div>
     </div>
   </div>
 </section>
@@ -348,7 +407,7 @@ footer p{font-family:var(--mono);font-size:10.5px;letter-spacing:.12em;text-tran
 
 <footer>
   <div class="wrap">
-    <img src="assets/rig-logo.webp" alt="Real Insurance Group" width="900" height="477">
+    <img src="https://javmartz04-ship-it.github.io/rig-marketing-machine-optin/assets/rig-logo.webp" alt="Real Insurance Group" width="900" height="477">
     <p>&copy; 2026 The Real Insurance Group. All rights reserved.<br>Not connected with or endorsed by the United States government or the federal Medicare program.</p>
   </div>
 </footer>
@@ -425,6 +484,27 @@ const io = new IntersectionObserver(es=>es.forEach(e=>{
 }),{threshold:.18});
 document.querySelectorAll('.rv').forEach(el=>io.observe(el));
 document.querySelectorAll('.k.rv + .h2 em.mk').forEach(m=>io.observe(m.closest('.h2')));
+/* ---------- festive gift boxes (decoration only) ---------- */
+(function(){
+  const C={y:['#F2B92E','#0B1220'],k:['#0B1220','#F2B92E'],p:['#F9DDE2','#E2433A'],b:['#DCE8FB','#1F56C4'],g:['#FBE7A8','#A9790A'],w:['#FFFFFF','#E2433A']};
+  const box=(c)=>{const [f,r]=C[c];return '<svg viewBox="0 0 64 64"><path d="M32 18c-6-12-20-12-18-3 2 7 18 3 18 3s16 4 18-3c2-9-12-9-18 3z" fill="'+r+'" stroke="#0B1220" stroke-width="3" stroke-linejoin="round"/><rect x="6" y="18" width="52" height="14" rx="3" fill="'+f+'" stroke="#0B1220" stroke-width="3"/><rect x="10" y="32" width="44" height="28" rx="3" fill="'+f+'" stroke="#0B1220" stroke-width="3"/><path d="M27 18h10v42H27z" fill="'+r+'" stroke="#0B1220" stroke-width="3"/></svg>'};
+  // [selector, x(% from left), y(% from top), size px, color, rotate deg, desktop-only]
+  const P={
+    '.hero':[[3.5,8,52,'y',-12,1],[96,6,44,'p',14,1],[50,4,30,'b',8,1],[3,70,40,'k',10,1],[94,92,48,'g',-8,0],[4,94,34,'w',-14,0]],
+    '.steps':[[3,14,46,'p',-10,1],[95,55,42,'y',12,1],[4,88,36,'b',8,1]],
+    '.film':[[94,10,48,'k',10,1],[3,20,38,'g',-8,1]],
+    '.bye':[[4,4,40,'p',-12,1],[95,8,50,'y',10,0]],
+    '.bye .box':[[50,10,40,'y',12,1],[46,86,34,'p',-10,1],[8,92,30,'b',8,0]]
+  };
+  let i=0;
+  for(const sel in P){const el=document.querySelector(sel);if(!el)continue;
+    const w=document.createElement('div');w.className='gifts';w.setAttribute('aria-hidden','true');
+    for(const [x,y,sz,c,r,dm] of P[sel]){const g=document.createElement('span');g.className='gb'+(dm?' dm':'');
+      const s=(innerWidth<720?.75:1.35)*sz;
+      g.style.cssText='left:calc('+x+'% - '+s/2+'px);top:'+y+'%;width:'+s+'px;rotate:'+r+'deg;animation-delay:-'+(i++*0.9)+'s';
+      g.innerHTML=box(c);w.appendChild(g)}
+    el.prepend(w)}
+})();
 </script>
 </body>
 </html>
