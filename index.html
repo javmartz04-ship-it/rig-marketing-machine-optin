@@ -455,6 +455,25 @@ form .btn.busy{opacity:.85;cursor:wait}
   .bftag::before{left:8px}
   .bftag b{font-size:22px}
 }
+
+/* ===== festive gifts ===== */
+.sec,.final,.proof{position:relative}
+.gifts{position:absolute;inset:0;pointer-events:none;z-index:1;overflow:hidden}
+.hero>.wrap,.sec>.wrap,.final>.wrap{position:relative;z-index:2}
+.gb{position:absolute;filter:drop-shadow(3px 3px 0 var(--ink));animation:bob 6s ease-in-out infinite}
+.final .box .gifts{z-index:0}
+.final .box .gb{filter:drop-shadow(3px 3px 0 rgba(242,185,46,.55))}
+.final .box .gb svg *{stroke:#F6F5F1}
+.gb svg{display:block;width:100%;height:auto;overflow:visible}
+@keyframes bob{0%,100%{translate:0 0}50%{translate:0 -10px}}
+.bfm{background:var(--yellow);border-top:2px solid var(--ink);border-bottom:2px solid var(--ink);overflow:hidden;white-space:nowrap}
+.bfm .tr{display:inline-flex;align-items:center;gap:26px;padding:14px 0;animation:mq 38s linear infinite;
+  font-family:var(--mono);font-size:13px;letter-spacing:.18em;text-transform:uppercase;font-weight:600;color:var(--ink)}
+.bfm .tr b{font-weight:800}
+.bfm svg{width:20px;height:20px;flex:none}
+@keyframes mq{to{transform:translateX(-50%)}}
+.btn:hover .bi{transform:rotate(-12deg) scale(1.08)}
+@media (max-width:720px){.bf .sp{display:none}.gb.dm{display:none}.bfm .tr{font-size:11px;gap:18px;padding:11px 0}}
 </style>
 </head>
 <body>
@@ -484,7 +503,7 @@ form .btn.busy{opacity:.85;cursor:wait}
         <div class="u"><b data-s>00</b><small>Sec</small></div>
       </div>
       <div class="act">
-        <button class="btn" data-open>Reserve My Free Seat <span class="bi"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></button>
+        <button class="btn" data-open>Reserve My Free Seat <span class="bi"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="9" width="18" height="12" rx="1.5"/><path d="M2 9h20M12 9v12M12 9c-2-4-7-5-7-2s4 2 7 2c3 0 7 1 7-2s-5-2-7 2"/></svg></span></button>
         <p class="risk"><b>Free</b>, live online, Q&amp;A at the end</p>
         <p class="gift"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="9" width="18" height="12" rx="1.5"/><path d="M2 9h20M12 9v12M12 9c-2-4-7-5-7-2s4 2 7 2c3 0 7 1 7-2s-5-2-7 2"/></svg><span><b>Black Friday, live only:</b> special gifts when you join, plus 65% off. Saturday only.</span></p>
       </div>
@@ -525,6 +544,7 @@ form .btn.busy{opacity:.85;cursor:wait}
 </div>
 
 <!-- ===== problem + reframe ===== -->
+<div class="bfm" aria-label="Black Friday special: special gifts and 65% off for live attendees, Saturday, Nov 28, 11AM EST"><div class="tr" aria-hidden="true"><span><b>Black Friday Special</b></span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="9" width="18" height="12" rx="1.5"/><path d="M2 9h20M12 9v12M12 9c-2-4-7-5-7-2s4 2 7 2c3 0 7 1 7-2s-5-2-7 2"/></svg><span>Special gifts for live attendees</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="9" width="18" height="12" rx="1.5"/><path d="M2 9h20M12 9v12M12 9c-2-4-7-5-7-2s4 2 7 2c3 0 7 1 7-2s-5-2-7 2"/></svg><span><b>65% Off</b></span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="9" width="18" height="12" rx="1.5"/><path d="M2 9h20M12 9v12M12 9c-2-4-7-5-7-2s4 2 7 2c3 0 7 1 7-2s-5-2-7 2"/></svg><span>Saturday, Nov 28, 11AM EST</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="9" width="18" height="12" rx="1.5"/><path d="M2 9h20M12 9v12M12 9c-2-4-7-5-7-2s4 2 7 2c3 0 7 1 7-2s-5-2-7 2"/></svg><span><b>Black Friday Special</b></span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="9" width="18" height="12" rx="1.5"/><path d="M2 9h20M12 9v12M12 9c-2-4-7-5-7-2s4 2 7 2c3 0 7 1 7-2s-5-2-7 2"/></svg><span>Special gifts for live attendees</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="9" width="18" height="12" rx="1.5"/><path d="M2 9h20M12 9v12M12 9c-2-4-7-5-7-2s4 2 7 2c3 0 7 1 7-2s-5-2-7 2"/></svg><span><b>65% Off</b></span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="9" width="18" height="12" rx="1.5"/><path d="M2 9h20M12 9v12M12 9c-2-4-7-5-7-2s4 2 7 2c3 0 7 1 7-2s-5-2-7 2"/></svg><span>Saturday, Nov 28, 11AM EST</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="9" width="18" height="12" rx="1.5"/><path d="M2 9h20M12 9v12M12 9c-2-4-7-5-7-2s4 2 7 2c3 0 7 1 7-2s-5-2-7 2"/></svg><span><b>Black Friday Special</b></span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="9" width="18" height="12" rx="1.5"/><path d="M2 9h20M12 9v12M12 9c-2-4-7-5-7-2s4 2 7 2c3 0 7 1 7-2s-5-2-7 2"/></svg><span>Special gifts for live attendees</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="9" width="18" height="12" rx="1.5"/><path d="M2 9h20M12 9v12M12 9c-2-4-7-5-7-2s4 2 7 2c3 0 7 1 7-2s-5-2-7 2"/></svg><span><b>65% Off</b></span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="9" width="18" height="12" rx="1.5"/><path d="M2 9h20M12 9v12M12 9c-2-4-7-5-7-2s4 2 7 2c3 0 7 1 7-2s-5-2-7 2"/></svg><span>Saturday, Nov 28, 11AM EST</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="9" width="18" height="12" rx="1.5"/><path d="M2 9h20M12 9v12M12 9c-2-4-7-5-7-2s4 2 7 2c3 0 7 1 7-2s-5-2-7 2"/></svg><span><b>Black Friday Special</b></span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="9" width="18" height="12" rx="1.5"/><path d="M2 9h20M12 9v12M12 9c-2-4-7-5-7-2s4 2 7 2c3 0 7 1 7-2s-5-2-7 2"/></svg><span>Special gifts for live attendees</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="9" width="18" height="12" rx="1.5"/><path d="M2 9h20M12 9v12M12 9c-2-4-7-5-7-2s4 2 7 2c3 0 7 1 7-2s-5-2-7 2"/></svg><span><b>65% Off</b></span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="9" width="18" height="12" rx="1.5"/><path d="M2 9h20M12 9v12M12 9c-2-4-7-5-7-2s4 2 7 2c3 0 7 1 7-2s-5-2-7 2"/></svg><span>Saturday, Nov 28, 11AM EST</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="9" width="18" height="12" rx="1.5"/><path d="M2 9h20M12 9v12M12 9c-2-4-7-5-7-2s4 2 7 2c3 0 7 1 7-2s-5-2-7 2"/></svg></div></div>
 <section class="sec prob">
   <div class="wrap">
     <div class="grid">
@@ -710,7 +730,7 @@ form .btn.busy{opacity:.85;cursor:wait}
       </div>
     </div>
     <div class="cta rv">
-      <button class="btn" data-open>Reserve My Free Seat <span class="bi"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></button>
+      <button class="btn" data-open>Reserve My Free Seat <span class="bi"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="9" width="18" height="12" rx="1.5"/><path d="M2 9h20M12 9v12M12 9c-2-4-7-5-7-2s4 2 7 2c3 0 7 1 7-2s-5-2-7 2"/></svg></span></button>
       <p class="risk"><b>Free</b>, Saturday, Nov 28, 11AM EST, your link comes by text and email</p>
     </div>
   </div>
@@ -778,7 +798,7 @@ form .btn.busy{opacity:.85;cursor:wait}
           <div class="u"><b data-s>00</b><small>Sec</small></div>
         </div>
         <div style="margin-top:32px">
-          <button class="btn" data-open>Reserve My Free Seat <span class="bi"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></button>
+          <button class="btn" data-open>Reserve My Free Seat <span class="bi"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="9" width="18" height="12" rx="1.5"/><path d="M2 9h20M12 9v12M12 9c-2-4-7-5-7-2s4 2 7 2c3 0 7 1 7-2s-5-2-7 2"/></svg></span></button>
           <p class="risk"><b>Free</b>, takes 20 seconds</p>
           <p class="gift"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="9" width="18" height="12" rx="1.5"/><path d="M2 9h20M12 9v12M12 9c-2-4-7-5-7-2s4 2 7 2c3 0 7 1 7-2s-5-2-7 2"/></svg><span><b>Show up live:</b> special gifts when you join, plus 65% off. Saturday only.</span></p>
         </div>
@@ -801,7 +821,7 @@ form .btn.busy{opacity:.85;cursor:wait}
 </footer>
 
 <div class="mcta" id="mcta">
-  <button class="btn" data-open>Reserve My Free Seat <span class="bi"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></button>
+  <button class="btn" data-open>Reserve My Free Seat <span class="bi"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="9" width="18" height="12" rx="1.5"/><path d="M2 9h20M12 9v12M12 9c-2-4-7-5-7-2s4 2 7 2c3 0 7 1 7-2s-5-2-7 2"/></svg></span></button>
 </div>
 
 <!-- ===== opt-in modal ===== -->
@@ -986,6 +1006,31 @@ f.addEventListener('submit',e=>{
     .catch(()=>{ backup(); return new Promise(r=>setTimeout(r,500)); })
     .finally(()=>{ clearTimeout(guard); setTimeout(done, 150); });
 });
+
+/* ---------- festive gift boxes (decoration only) ---------- */
+(function(){
+  const C={y:['#F2B92E','#0B1220'],k:['#0B1220','#F2B92E'],p:['#F9DDE2','#E2433A'],b:['#DCE8FB','#1F56C4'],g:['#FBE7A8','#A9790A'],w:['#FFFFFF','#E2433A']};
+  const box=(c)=>{const [f,r]=C[c];return '<svg viewBox="0 0 64 64"><path d="M32 18c-6-12-20-12-18-3 2 7 18 3 18 3s16 4 18-3c2-9-12-9-18 3z" fill="'+r+'" stroke="#0B1220" stroke-width="3" stroke-linejoin="round"/><rect x="6" y="18" width="52" height="14" rx="3" fill="'+f+'" stroke="#0B1220" stroke-width="3"/><rect x="10" y="32" width="44" height="28" rx="3" fill="'+f+'" stroke="#0B1220" stroke-width="3"/><path d="M27 18h10v42H27z" fill="'+r+'" stroke="#0B1220" stroke-width="3"/></svg>'};
+  // [selector, x(% from left), y(% from top), size px, color, rotate deg, desktop-only]
+  const P={
+    '.hero':[[3.5,10,56,'y',-12,1],[95.5,6,46,'p',14,1],[52,5,30,'b',8,1],[4,52,40,'k',10,1],[96,40,34,'g',-10,1],[93,90,50,'g',-8,0],[4,90,36,'w',-14,0],[44,93,30,'p',12,1]],
+    '.prob':[[3,14,46,'p',-10,1],[95,60,40,'y',12,1]],
+    '.mech':[[94,10,50,'k',10,1],[2,70,38,'b',-8,1]],
+    '.sec.ag':[[2,8,42,'y',12,1],[96,46,36,'p',-14,1],[3,88,44,'g',8,1]],
+    '.host':[[95,12,46,'b',-10,1]],
+    '.fit':[[2,30,40,'k',-6,1],[96,70,44,'y',10,1]],
+    '.final':[[4,4,40,'p',-12,1],[93,2,52,'y',10,0],[96,92,38,'b',-8,1]],
+    '.final .box':[[58,10,40,'y',12,1],[54,86,34,'p',-10,1],[93,88,44,'g',8,0],[88,6,30,'w',-14,1]]
+  };
+  let i=0;
+  for(const sel in P){const el=document.querySelector(sel);if(!el)continue;
+    const w=document.createElement('div');w.className='gifts';w.setAttribute('aria-hidden','true');
+    for(const [x,y,sz,c,r,dm] of P[sel]){const g=document.createElement('span');g.className='gb'+(dm?' dm':'');
+      const s=(innerWidth<720?.75:1.35)*sz;
+      g.style.cssText='left:calc('+x+'% - '+s/2+'px);top:'+y+'%;width:'+s+'px;rotate:'+r+'deg;animation-delay:-'+(i++*0.9)+'s';
+      g.innerHTML=box(c);w.appendChild(g)}
+    el.prepend(w)}
+})();
 </script>
 </body>
 </html>
