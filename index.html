@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>The Marketing Machine | Free Live Masterclass, Saturday 11AM EST</title>
-<meta name="description" content="How Medicare agents are filling their calendar every month by building their own marketing machine. Free live masterclass with Johnny Brock, Saturday 11AM EST.">
+<title>The Marketing Machine | Black Friday Live Masterclass, Saturday, November 28, 11AM EST</title>
+<meta name="description" content="How Medicare agents are filling their calendar every month by building their own marketing machine. Free Black Friday live masterclass with Johnny Brock, Saturday, November 28, 11AM EST.">
 <link rel="preload" href="https://javmartz04-ship-it.github.io/rig-marketing-machine-optin/assets/fonts/InterTight.woff2" as="font" type="font/woff2" crossorigin>
 <style>
 @font-face{font-family:'Inter Tight';src:url(https://javmartz04-ship-it.github.io/rig-marketing-machine-optin/assets/fonts/InterTight.woff2) format('woff2');font-weight:100 900;font-display:swap}
@@ -427,17 +427,46 @@ form .btn.busy{opacity:.85;cursor:wait}
   .h1 .ln>span{transform:none}
   em.mk{background-size:100% 74%}
 }
+
+/* ===== black friday ===== */
+.bf{background:var(--ink);color:#fff;position:relative;z-index:5;overflow:hidden}
+.bf .in{max-width:1200px;margin:0 auto;padding:11px 20px;display:flex;align-items:center;justify-content:center;gap:14px;flex-wrap:wrap;
+  font-family:var(--mono);font-size:11.5px;letter-spacing:.16em;text-transform:uppercase;font-weight:600;text-align:center}
+.bf .in b{color:var(--yellow);font-weight:700}
+.bf .in svg{width:16px;height:16px;color:var(--yellow);flex:none}
+.bf .sp{width:5px;height:5px;background:var(--yellow);transform:rotate(45deg);flex:none}
+.bf::after{content:"";position:absolute;left:0;right:0;bottom:0;height:3px;background:repeating-linear-gradient(90deg,var(--yellow) 0 18px,transparent 18px 30px)}
+.bftag{position:absolute;z-index:6;right:-14px;top:-18px;transform:rotate(7deg);background:var(--yellow);color:var(--ink);border:2.5px solid var(--ink);
+  border-radius:12px 12px 12px 12px;box-shadow:5px 5px 0 var(--ink);padding:12px 18px 12px 30px;text-align:left;animation:sway 5s ease-in-out infinite;transform-origin:20% 0}
+.bftag::before{content:"";position:absolute;left:11px;top:50%;width:9px;height:9px;margin-top:-5px;border-radius:50%;background:var(--paper);border:2px solid var(--ink)}
+.bftag small{display:block;font-family:var(--mono);font-size:9.5px;letter-spacing:.18em;text-transform:uppercase;font-weight:700}
+.bftag b{display:block;font-size:30px;font-weight:800;letter-spacing:-.04em;line-height:1;margin-top:3px}
+@keyframes sway{0%,100%{transform:rotate(7deg)}50%{transform:rotate(4deg)}}
+.gift{display:flex;align-items:center;gap:12px;margin-top:22px;max-width:470px;background:#fff;border:1.5px dashed var(--ink);border-radius:12px;padding:12px 16px;font-size:15px;color:var(--t2);line-height:1.4}
+.gift svg{width:26px;height:26px;flex:none;color:var(--gold)}
+.gift b{color:var(--t1);font-weight:650}
+.final .gift{background:rgba(255,255,255,.06);border-color:rgba(242,185,46,.6);color:rgba(255,255,255,.75)}
+.final .gift b{color:#fff}
+.final .gift svg{color:var(--yellow)}
+@media (max-width:720px){
+  .bf .in{font-size:9.5px;letter-spacing:.1em;gap:8px;padding:9px 14px}
+  .bf .hide-m{display:none}
+  .bftag{right:-4px;top:-14px;padding:9px 13px 9px 24px}
+  .bftag::before{left:8px}
+  .bftag b{font-size:22px}
+}
 </style>
 </head>
 <body>
 
+<div class="bf" role="note"><div class="in"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="9" width="18" height="12" rx="1.5"/><path d="M2 9h20M12 9v12M12 9c-2-4-7-5-7-2s4 2 7 2c3 0 7 1 7-2s-5-2-7 2"/></svg><span><b>Black Friday Special</b></span><span class="sp"></span><span>Live attendees get special gifts</span><span class="sp hide-m"></span><span class="hide-m">Saturday, Nov 28, 11AM EST</span></div></div>
 <main id="top">
 <!-- ===== hero ===== -->
 <section class="hero" id="hero">
   <div class="light"></div>
   <div class="wrap">
     <div class="top">
-      <span class="pill"><span class="dot"></span>Free live masterclass &middot; Saturday 11AM EST</span>
+      <span class="pill"><span class="dot"></span>Black Friday masterclass, Sat Nov 28, 11AM EST</span>
       <h1 class="h1">
         <span class="ln"><span>How Medicare agents are filling their</span></span>
         <span class="ln"><span>calendar every month by building</span></span>
@@ -448,7 +477,7 @@ form .btn.busy{opacity:.85;cursor:wait}
     <div>
       <p class="sub">Learn how to set up your first Facebook ad campaign, scale it predictably without wasting money, and <b>make more money from every client you close.</b></p>
       <div class="cd" data-cd>
-        <div class="lab"><small data-cd-k>Starts in</small><span>Sat &middot; 11AM EST</span></div>
+        <div class="lab"><small data-cd-k>Starts in</small><span>Sat, Nov 28, 11AM EST</span></div>
         <div class="u"><b data-d>00</b><small>Days</small></div>
         <div class="u"><b data-h>00</b><small>Hrs</small></div>
         <div class="u"><b data-m>00</b><small>Min</small></div>
@@ -456,11 +485,13 @@ form .btn.busy{opacity:.85;cursor:wait}
       </div>
       <div class="act">
         <button class="btn" data-open>Reserve My Free Seat <span class="bi"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></button>
-        <p class="risk"><b>Free</b> &nbsp;&middot;&nbsp; Live online &nbsp;&middot;&nbsp; Q&amp;A at the end</p>
+        <p class="risk"><b>Free</b>, live online, Q&amp;A at the end</p>
+        <p class="gift"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="9" width="18" height="12" rx="1.5"/><path d="M2 9h20M12 9v12M12 9c-2-4-7-5-7-2s4 2 7 2c3 0 7 1 7-2s-5-2-7 2"/></svg><span><b>Black Friday, live only:</b> special gifts when you join, plus 65% off. Saturday only.</span></p>
       </div>
     </div>
 
     <div class="stage rv d2" aria-label="Preview of the live masterclass">
+      <div class="bftag" aria-label="Black Friday, 65% off for live attendees"><small>Black Friday</small><b>65% Off</b><small>Live attendees</small></div>
       <div class="back"><img src="https://javmartz04-ship-it.github.io/rig-marketing-machine-optin/assets/slides/s01.jpg" alt="Title slide: The Marketing Machine, with Johnny Brock" width="1600" height="900"></div>
       <div class="win">
         <div class="bar"><span class="dots"><i></i><i></i><i></i></span><span class="t"><img src="https://javmartz04-ship-it.github.io/rig-marketing-machine-optin/assets/rig-logo.webp" alt="Real Insurance Group" width="900" height="477">The Marketing Machine</span><span class="lv"><i></i>Live</span></div>
@@ -545,19 +576,19 @@ form .btn.busy{opacity:.85;cursor:wait}
     <div class="vids">
       <figure class="vc wide rv">
         <div class="vp"><video crossorigin="anonymous" src="https://javmartz04-ship-it.github.io/rig-marketing-machine-optin/assets/video/eugene.mp4" poster="https://javmartz04-ship-it.github.io/rig-marketing-machine-optin/assets/video/eugene.jpg" preload="none" playsinline controlslist="nodownload"><track kind="captions" src="https://javmartz04-ship-it.github.io/rig-marketing-machine-optin/assets/video/eugene.vtt" srclang="en" label="English" default></video>
-          <button class="play" aria-label="Play Eugene's video testimonial"><i><svg viewBox="0 0 24 24"><path d="M6 4l15 8-15 8z"/></svg></i><span>Watch &middot; 2:38</span></button></div>
+          <button class="play" aria-label="Play Eugene's video testimonial"><i><svg viewBox="0 0 24 24"><path d="M6 4l15 8-15 8z"/></svg></i><span>Watch, 2:38</span></button></div>
         <div class="vt">
-          <span class="tg">Agency owner &middot; 10+ years in the business</span>
-          <p class="st">300 &rarr; 800+<small>applications in a year, after a 10-year plateau</small></p>
+          <span class="tg">Agency owner, 10+ years in the business</span>
+          <p class="st">300 to 800+<small>applications in a year, after a 10-year plateau</small></p>
           <blockquote>"The year prior we barely scratched 300 applications, and then in 2025 <b>I was able to do over 800 applications.</b> If I was starting from scratch, that'd be the guy I would call."</blockquote>
           <figcaption class="who">Eugene<small>Agency owner</small></figcaption>
         </div>
       </figure>
       <figure class="vc rv">
         <div class="vp"><video crossorigin="anonymous" src="https://javmartz04-ship-it.github.io/rig-marketing-machine-optin/assets/video/barry.mp4" poster="https://javmartz04-ship-it.github.io/rig-marketing-machine-optin/assets/video/barry.jpg" preload="none" playsinline controlslist="nodownload"><track kind="captions" src="https://javmartz04-ship-it.github.io/rig-marketing-machine-optin/assets/video/barry.vtt" srclang="en" label="English" default></video>
-          <button class="play" aria-label="Play Barry's video testimonial"><i><svg viewBox="0 0 24 24"><path d="M6 4l15 8-15 8z"/></svg></i><span>Watch &middot; 0:55</span></button></div>
+          <button class="play" aria-label="Play Barry's video testimonial"><i><svg viewBox="0 0 24 24"><path d="M6 4l15 8-15 8z"/></svg></i><span>Watch, 0:55</span></button></div>
         <div class="vt">
-          <span class="tg">Agency owner &middot; 7 employees</span>
+          <span class="tg">Agency owner, 7 employees</span>
           <p class="st">Scaled to 50<small>deals a week, up from 20</small></p>
           <blockquote>"Now I have quantity and I have quality. <b>Everything is absolutely running better than it ever has.</b>"</blockquote>
           <figcaption class="who">Barry<small>Agency owner</small></figcaption>
@@ -565,9 +596,9 @@ form .btn.busy{opacity:.85;cursor:wait}
       </figure>
       <figure class="vc rv d1">
         <div class="vp"><video crossorigin="anonymous" src="https://javmartz04-ship-it.github.io/rig-marketing-machine-optin/assets/video/justin.mp4" poster="https://javmartz04-ship-it.github.io/rig-marketing-machine-optin/assets/video/justin.jpg" preload="none" playsinline controlslist="nodownload"><track kind="captions" src="https://javmartz04-ship-it.github.io/rig-marketing-machine-optin/assets/video/justin.vtt" srclang="en" label="English" default></video>
-          <button class="play" aria-label="Play Justin Gray's video testimonial"><i><svg viewBox="0 0 24 24"><path d="M6 4l15 8-15 8z"/></svg></i><span>Watch &middot; 0:32</span></button></div>
+          <button class="play" aria-label="Play Justin Gray's video testimonial"><i><svg viewBox="0 0 24 24"><path d="M6 4l15 8-15 8z"/></svg></i><span>Watch, 0:32</span></button></div>
         <div class="vt">
-          <span class="tg">Medicare agent &middot; ASL market</span>
+          <span class="tg">Medicare agent, ASL market</span>
           <p class="st">$12<small>booked appointments in the ASL market</small></p>
           <blockquote>"My dad's deaf and I know sign language. Working with Johnny, <b>we've come up with how to get ASL leads and they're like 12 bucks.</b>"</blockquote>
           <figcaption class="who">Justin Gray<small>Medicare agent</small></figcaption>
@@ -575,9 +606,9 @@ form .btn.busy{opacity:.85;cursor:wait}
       </figure>
       <figure class="vc rv">
         <div class="vp"><video crossorigin="anonymous" src="https://javmartz04-ship-it.github.io/rig-marketing-machine-optin/assets/video/mindy.mp4" poster="https://javmartz04-ship-it.github.io/rig-marketing-machine-optin/assets/video/mindy.jpg" preload="none" playsinline controlslist="nodownload"><track kind="captions" src="https://javmartz04-ship-it.github.io/rig-marketing-machine-optin/assets/video/mindy.vtt" srclang="en" label="English" default></video>
-          <button class="play" aria-label="Play Mindy Baron's video testimonial"><i><svg viewBox="0 0 24 24"><path d="M6 4l15 8-15 8z"/></svg></i><span>Watch &middot; 1:50</span></button></div>
+          <button class="play" aria-label="Play Mindy Baron's video testimonial"><i><svg viewBox="0 0 24 24"><path d="M6 4l15 8-15 8z"/></svg></i><span>Watch, 1:50</span></button></div>
         <div class="vt">
-          <span class="tg">Agent &middot; 10+ years, mom, full-time business</span>
+          <span class="tg">Agent, 10+ years, mom, full-time business</span>
           <p class="st">Full calendar<small>outside of open enrollment, for the first time</small></p>
           <blockquote>"I'm running Facebook ads, I've added a virtual assistant, and <b>I have a full calendar outside of open enrollment, which never happened before.</b>"</blockquote>
           <figcaption class="who">Mindy Baron<small>Licensed agent</small></figcaption>
@@ -585,7 +616,7 @@ form .btn.busy{opacity:.85;cursor:wait}
       </figure>
       <figure class="vc rv d1">
         <div class="vp"><video crossorigin="anonymous" src="https://javmartz04-ship-it.github.io/rig-marketing-machine-optin/assets/video/taggart.mp4" poster="https://javmartz04-ship-it.github.io/rig-marketing-machine-optin/assets/video/taggart.jpg" preload="none" playsinline controlslist="nodownload"><track kind="captions" src="https://javmartz04-ship-it.github.io/rig-marketing-machine-optin/assets/video/taggart.vtt" srclang="en" label="English" default></video>
-          <button class="play" aria-label="Play Taggart Allen's video testimonial"><i><svg viewBox="0 0 24 24"><path d="M6 4l15 8-15 8z"/></svg></i><span>Watch &middot; 0:35</span></button></div>
+          <button class="play" aria-label="Play Taggart Allen's video testimonial"><i><svg viewBox="0 0 24 24"><path d="M6 4l15 8-15 8z"/></svg></i><span>Watch, 0:35</span></button></div>
         <div class="vt">
           <span class="tg">New to Medicare</span>
           <p class="st">Trained daily<small>from brand new to knowing every plan</small></p>
@@ -595,16 +626,16 @@ form .btn.busy{opacity:.85;cursor:wait}
       </figure>
       <figure class="vc wide rv">
         <div class="vp"><video crossorigin="anonymous" src="https://javmartz04-ship-it.github.io/rig-marketing-machine-optin/assets/video/luke.mp4" poster="https://javmartz04-ship-it.github.io/rig-marketing-machine-optin/assets/video/luke.jpg" preload="none" playsinline controlslist="nodownload"><track kind="captions" src="https://javmartz04-ship-it.github.io/rig-marketing-machine-optin/assets/video/luke.vtt" srclang="en" label="English" default></video>
-          <button class="play" aria-label="Play Luke Busani's video testimonial"><i><svg viewBox="0 0 24 24"><path d="M6 4l15 8-15 8z"/></svg></i><span>Watch &middot; 0:42</span></button></div>
+          <button class="play" aria-label="Play Luke Busani's video testimonial"><i><svg viewBox="0 0 24 24"><path d="M6 4l15 8-15 8z"/></svg></i><span>Watch, 0:42</span></button></div>
         <div class="vt">
-          <span class="tg">Medicare agent &middot; 4 years in the industry</span>
+          <span class="tg">Medicare agent, 4 years in the industry</span>
           <p class="st">Full control<small>of his own marketing, after years of buying leads</small></p>
           <blockquote>"I've been in the industry the last four years, paying for live transfers, direct mail leads, Facebook leads, you name it. <b>But being able to have full control over my marketing has really changed my business.</b>"</blockquote>
           <figcaption class="who">Luke Busani<small>Medicare agent</small></figcaption>
         </div>
       </figure>
     </div>
-    <p class="swipe hand">swipe for all 6 stories &rarr;</p>
+    <p class="swipe hand">swipe for all 6 stories</p>
     <div class="qs">
       <figure class="q rv"><p class="big">$10,000</p><blockquote>"I'm amazed how much Johnny Brock changed my entire business. <b>He made me roughly $10,000 from June to the middle of July</b>, and I've not even scratched the surface yet."</blockquote><figcaption class="who"><i>JC</i><div><span>Jill Coates</span><small>Real Insurance Group community</small></div></figcaption></figure>
       <figure class="q rv d1"><p class="big">Secret weapon</p><blockquote>"In the wild world of Medicare, <b>Johnny Brock is my secret weapon.</b>"</blockquote><figcaption class="who"><i>TK</i><div><span>Thomas Key</span><small>Real Insurance Group community</small></div></figcaption></figure>
@@ -655,7 +686,7 @@ form .btn.busy{opacity:.85;cursor:wait}
           <span class="part-l">Reading the account</span>
           <h3>The four metrics that matter most, read left to right.</h3>
           <p>Alone, each number says nothing. Together they tell you what to keep, what to leave alone, and what to relaunch. Then a real client account, on screen.</p>
-          <span class="proofline"><b>3,459 leads</b> at $1.64 each &middot; veteran campaign</span>
+          <span class="proofline"><b>3,459 leads</b> at $1.64 each, veteran campaign</span>
         </div>
         <div class="slide rv d2"><span class="tag">Slide 26</span><img src="https://javmartz04-ship-it.github.io/rig-marketing-machine-optin/assets/slides/s26.jpg" alt="Slide: alone each number says nothing, together they tell the story" width="1600" height="900"></div>
       </div>
@@ -680,7 +711,7 @@ form .btn.busy{opacity:.85;cursor:wait}
     </div>
     <div class="cta rv">
       <button class="btn" data-open>Reserve My Free Seat <span class="bi"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></button>
-      <p class="risk"><b>Free</b> &nbsp;&middot;&nbsp; Saturday 11AM EST &nbsp;&middot;&nbsp; Your link comes by text and email</p>
+      <p class="risk"><b>Free</b>, Saturday, Nov 28, 11AM EST, your link comes by text and email</p>
     </div>
   </div>
 </section>
@@ -736,11 +767,11 @@ form .btn.busy{opacity:.85;cursor:wait}
     <div class="box">
       <div style="position:relative">
         <img class="flogo" src="https://javmartz04-ship-it.github.io/rig-marketing-machine-optin/assets/rig-logo.webp" alt="Real Insurance Group" width="900" height="477">
-        <span class="k">Saturday &middot; 11AM EST</span>
+        <span class="k">Black Friday, Saturday, Nov 28, 11AM EST</span>
         <h2>Build the machine <em>this Saturday.</em></h2>
         <p>Five parts, the real slides, a real account on screen, and a live Q&amp;A until the questions run out.</p>
         <div class="cd" data-cd>
-          <div class="lab"><small data-cd-k>Starts in</small><span>Sat &middot; 11AM EST</span></div>
+          <div class="lab"><small data-cd-k>Starts in</small><span>Sat, Nov 28, 11AM EST</span></div>
           <div class="u"><b data-d>00</b><small>Days</small></div>
           <div class="u"><b data-h>00</b><small>Hrs</small></div>
           <div class="u"><b data-m>00</b><small>Min</small></div>
@@ -748,7 +779,8 @@ form .btn.busy{opacity:.85;cursor:wait}
         </div>
         <div style="margin-top:32px">
           <button class="btn" data-open>Reserve My Free Seat <span class="bi"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></button>
-          <p class="risk"><b>Free</b> &nbsp;&middot;&nbsp; Takes 20 seconds</p>
+          <p class="risk"><b>Free</b>, takes 20 seconds</p>
+          <p class="gift"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="9" width="18" height="12" rx="1.5"/><path d="M2 9h20M12 9v12M12 9c-2-4-7-5-7-2s4 2 7 2c3 0 7 1 7-2s-5-2-7 2"/></svg><span><b>Show up live:</b> special gifts when you join, plus 65% off. Saturday only.</span></p>
         </div>
       </div>
       <div class="stack" aria-hidden="true">
@@ -779,7 +811,7 @@ form .btn.busy{opacity:.85;cursor:wait}
     <button class="x" data-close aria-label="Close"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="M18 6L6 18M6 6l12 12"/></svg></button>
     <div class="mo-rail">
       <span class="k">Your seat</span>
-      <h4>The Marketing Machine<br>Saturday &middot; 11AM EST</h4>
+      <h4>The Marketing Machine<br>Saturday, Nov 28, 11AM EST</h4>
       <div class="mini"><img src="https://javmartz04-ship-it.github.io/rig-marketing-machine-optin/assets/slides/s05.jpg" alt="" width="1600" height="900"></div>
       <ul>
         <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#A9790A" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg>The five parts of the Medicare Marketing Machine</li>
