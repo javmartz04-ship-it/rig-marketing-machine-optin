@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Book Your Onboarding Call | The Marketing Machine</title>
+<meta name="robots" content="noindex,nofollow">
+<link rel="stylesheet" href="bf.css">
+<style>
+#bfp .grid{display:grid;grid-template-columns:minmax(0,40fr) minmax(0,60fr);gap:52px;align-items:start}
+#bfp .h1{font-size:clamp(36px,4vw,58px)}
+#bfp .cover{margin-top:28px;border-top:1.5px solid var(--line);padding-top:20px}
+#bfp .cover .k{color:var(--t1)}
+#bfp .cover ul{list-style:none;margin-top:14px}
+#bfp .cover li{display:flex;gap:12px;padding:8px 0;font-size:16px;color:var(--t2);line-height:1.45}
+#bfp .cover li b{color:var(--t1);font-weight:650}
+#bfp .cover li i{flex:none;font-style:normal;width:26px;height:26px;border:2px solid var(--ink);border-radius:8px;background:var(--goldt);display:grid;place-items:center;font-family:var(--mono);font-size:11px;font-weight:700;box-shadow:2px 2px 0 var(--ink);margin-top:-1px}
+#bfp .cal{padding:10px 8px;min-height:700px;position:relative}
+#bfp .cal iframe{display:block;width:100%;min-height:680px;border:0;overflow:hidden}
+#bfp .cal-w{position:absolute;left:0;right:0;top:240px;text-align:center;font-size:15px;color:var(--t3);transition:opacity .3s}
+#bfp .cal.on .cal-w{opacity:0}
+#bfp .hand.pin{display:block;font-size:24px;transform:rotate(-2deg);margin:0 0 10px 8px}
+@media (max-width:960px){
+  #bfp .grid{grid-template-columns:1fr;gap:30px}
+  #bfp .cover{display:none}
+  #bfp .cover.m{display:block}
+}
+#bfp .cover.m{display:none}
+@media (max-width:960px){#bfp .cover.m{display:block;margin-top:40px}}
+@media (max-width:560px){#bfp .cal{padding:6px 2px;min-height:760px}#bfp .cal iframe{min-height:760px}}
+</style>
+</head>
+<body>
+<div id="bfp">
+
+<div class="bf" role="note"><div class="in"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="9" width="18" height="12" rx="1.5"/><path d="M2 9h20M12 9v12M12 9c-2-4-7-5-7-2s4 2 7 2c3 0 7 1 7-2s-5-2-7 2"/></svg><span><b>Payment Confirmed</b></span><span class="sp"></span><span>Last step: book your onboarding call</span></div></div>
+
+<header class="top">
+  <div class="wrap">
+    <img src="../assets/rig-logo.webp" alt="The Real Insurance Group" width="900" height="477">
+    <span class="secure"><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>Step 2 Of 3</span>
+  </div>
+</header>
+
+<main>
+  <div class="wrap grid">
+    <section>
+      <span class="ok"><i><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg></i>You&rsquo;re In</span>
+      <h1 class="h1"><span>Book your onboarding call</span><span><em class="mk">with Johnny and Javier.</em></span></h1>
+      <p class="sub">Pick a time below. This is where your 3 months start: <b>we map your market, your message and your launch plan together.</b></p>
+      <div class="duo"><span class="fx"><img src="assets/johnny.webp" alt="Johnny Brock" width="818" height="1052"><img src="assets/javier.jpg" alt="Javier Martinez" width="435" height="432"></span><span><b>Johnny Brock and Javier Martinez</b><small>The Real Insurance Group</small></span></div>
+      <div class="cover">
+        <span class="k">On The Call</span>
+        <ul>
+          <li><i>1</i><span><b>Your market.</b> Exactly who your ads go after.</span></li>
+          <li><i>2</i><span><b>Your message.</b> What makes that person stop and care.</span></li>
+          <li><i>3</i><span><b>Your launch plan.</b> Setup, first campaigns, and what happens next.</span></li>
+        </ul>
+      </div>
+    </section>
+
+    <div>
+      <span class="hand pin">pick any open time</span>
+      <div class="card cal" id="cal"><p class="cal-w">Opening the calendar.</p></div>
+      <div class="cover m">
+        <span class="k">On The Call</span>
+        <ul>
+          <li><i>1</i><span><b>Your market.</b> Exactly who your ads go after.</span></li>
+          <li><i>2</i><span><b>Your message.</b> What makes that person stop and care.</span></li>
+          <li><i>3</i><span><b>Your launch plan.</b> Setup, first campaigns, and what happens next.</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <div class="wrap">
+    <img src="../assets/rig-logo.webp" alt="The Real Insurance Group" width="900" height="477">
+    <p>&copy; 2026 The Real Insurance Group. All rights reserved.<br>For licensed insurance professionals only. Not connected with or endorsed by the U.S. government or the federal Medicare program.</p>
+  </div>
+</footer>
+
+</div>
+<script>
+(function () {
+  var CALENDAR = '0uqMdgfKWeutWevyglFA';   // "Johnny's Calendar" in GHL. Swap for the onboarding calendar once it exists.
+  var WIDGET = 'https://link.brockequities.com';
+  var WELCOME = 'welcome.html';
+  // Framed by the checkout page (paid order inside its frame): lift this page to the top window.
+  if (window.top !== window.self) {
+    try { window.top.location.href = location.href; return; } catch (e) {}
+    try { window.parent.postMessage({ rigbf: 'paid', url: location.href.split('?')[0] }, '*'); } catch (e) {}
+  }
+  // Pre-fill the calendar with the buyer's details when GHL passes them in the URL.
+  var inq = new URLSearchParams(location.search), q = new URLSearchParams();
+  ['first_name', 'last_name', 'name', 'email', 'phone'].forEach(function (k) { if (inq.get(k)) q.set(k, inq.get(k)); });
+  var f = document.createElement('iframe');
+  f.src = WIDGET + '/widget/booking/' + CALENDAR + (q.toString() ? '?' + q : '');
+  f.id = CALENDAR + '_booking'; f.title = 'Choose a time for your onboarding call'; f.scrolling = 'no';
+  f.addEventListener('load', function () { document.getElementById('cal').classList.add('on'); });
+  document.getElementById('cal').appendChild(f);
+  var s = document.createElement('script'); s.src = WIDGET + '/js/form_embed.js'; s.async = true; document.body.appendChild(s);
+  // When the calendar reports a finished booking, go to the welcome page.
+  addEventListener('message', function (e) {
+    var d = e.data, n = Array.isArray(d) ? d[0] : (d && (d.type || d.event || d));
+    if (typeof n === 'string' && /booking-complete|appointment-booked/i.test(n)) setTimeout(function () { location.href = WELCOME; }, 600);
+  });
+})();
+</script>
+</body>
+</html>

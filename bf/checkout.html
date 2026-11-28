@@ -1,0 +1,191 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Checkout | The Marketing Machine, Black Friday</title>
+<meta name="robots" content="noindex,nofollow">
+<link rel="stylesheet" href="bf.css">
+<style>
+#bfp .grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:56px;align-items:start}
+#bfp .form{margin-top:30px;padding:26px 26px 22px}
+#bfp .co{display:block;width:calc(100% + 20px);margin:14px -10px 0;border:0;height:1180px;background:#fff;transition:height .3s}
+#bfp .co-w{font-size:15px;color:var(--t3);padding:24px 0 0}
+
+/* offer stack */
+#bfp .stack{position:relative;background:#fff;border:2.5px solid var(--ink);border-radius:22px;box-shadow:9px 9px 0 var(--ink);overflow:visible}
+#bfp .stack .hd{padding:26px 28px 22px;border-bottom:1.5px solid var(--ink);background:var(--cream);border-radius:20px 20px 0 0}
+#bfp .stack .hd h2{font-size:28px;font-weight:700;letter-spacing:-.035em;line-height:1.05;margin-top:10px;max-width:390px}
+#bfp .stack .hd p{color:var(--t2);font-size:15px;margin-top:8px;max-width:400px}
+#bfp .bftag{position:absolute;z-index:6;right:-14px;top:-18px;transform:rotate(7deg);background:var(--yellow);color:var(--ink);border:2.5px solid var(--ink);border-radius:14px;padding:10px 16px 10px 28px;box-shadow:5px 5px 0 var(--ink);text-align:left}
+#bfp .bftag::before{content:"";position:absolute;left:11px;top:50%;width:9px;height:9px;margin-top:-5px;border-radius:50%;background:var(--paper);border:2px solid var(--ink)}
+#bfp .bftag small{display:block;font-family:var(--mono);font-size:9.5px;letter-spacing:.18em;text-transform:uppercase;font-weight:700}
+#bfp .bftag b{display:block;font-size:26px;font-weight:800;letter-spacing:-.04em;line-height:1;margin-top:3px}
+
+#bfp .core{margin:20px 20px 0;background:var(--ink);color:#fff;border-radius:18px;box-shadow:5px 5px 0 var(--yellow);overflow:hidden}
+#bfp .core-h{padding:20px 20px 14px;border-bottom:1px solid rgba(255,255,255,.12)}
+#bfp .tag{display:inline-block;font-family:var(--mono);font-size:10px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;background:var(--yellow);color:var(--ink);border-radius:6px;padding:4px 8px;margin-bottom:10px}
+#bfp .tl{display:flex;align-items:flex-start;justify-content:space-between;gap:12px}
+#bfp .core h3{font-size:21px;font-weight:700;letter-spacing:-.03em;line-height:1.15}
+#bfp .core-h p{font-size:14px;color:rgba(255,255,255,.7);margin-top:6px}
+#bfp .core ul{list-style:none;padding:8px 20px 14px}
+#bfp .core li{display:flex;gap:10px;padding:7px 0;font-size:14px;line-height:1.45;color:rgba(255,255,255,.72)}
+#bfp .core li b{color:#fff;font-weight:650}
+#bfp .core li svg{flex:none;width:18px;height:18px;margin-top:1px;stroke:var(--yellow);fill:none;stroke-width:2.6;stroke-linecap:round;stroke-linejoin:round}
+
+#bfp .val{flex:none;font-family:var(--mono);font-size:10.5px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;border:1.5px solid var(--ink);border-radius:999px;padding:4px 10px;background:#fff;color:var(--ink);white-space:nowrap}
+#bfp .val.y{background:var(--yellow)}
+#bfp .val.inc{background:var(--green)}
+
+#bfp .items{padding:6px 28px}
+#bfp .it{display:grid;grid-template-columns:36px 1fr;gap:14px;padding:15px 0;border-bottom:1.5px solid var(--line-2)}
+#bfp .it:last-child{border-bottom:0}
+#bfp .it .n{width:36px;height:36px;border:2px solid var(--ink);border-radius:10px;display:grid;place-items:center;font-family:var(--mono);font-size:12px;font-weight:700;box-shadow:2px 2px 0 var(--ink)}
+#bfp .it:nth-child(1) .n{background:var(--goldt)}#bfp .it:nth-child(2) .n{background:var(--green)}#bfp .it:nth-child(3) .n{background:var(--pink)}#bfp .it:nth-child(4) .n{background:var(--blue)}#bfp .it:nth-child(5) .n{background:var(--cream)}
+#bfp .it h3{font-size:16.5px;font-weight:700;letter-spacing:-.02em;line-height:1.2}
+#bfp .it p{font-size:14px;color:var(--t3);margin-top:3px;line-height:1.45}
+#bfp .it s{color:var(--t3);text-decoration-color:var(--red);text-decoration-thickness:2px}
+#bfp .who{display:inline-flex;align-items:center;gap:10px;margin-top:10px;padding:4px 12px 4px 4px;border:1.5px solid var(--ink);border-radius:999px;background:var(--paper);font-size:13px;color:var(--t2)}
+#bfp .who .fx{display:flex}
+#bfp .who img{width:28px;height:28px;border-radius:50%;object-fit:cover;object-position:50% 20%;border:1.5px solid var(--ink);background:var(--cream)}
+#bfp .who img+img{margin-left:-8px}
+#bfp .who b{color:var(--t1)}
+
+#bfp .price{margin:20px;border:2.5px solid var(--ink);background:var(--cream);border-radius:16px;padding:20px 22px;display:flex;align-items:center;justify-content:space-between;gap:16px}
+#bfp .price .was{font-family:var(--mono);font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--t3)}
+#bfp .price .was s{display:block;font-family:var(--sans);font-size:22px;font-weight:700;letter-spacing:-.02em;color:var(--t3);margin-top:2px;text-decoration-color:var(--red);text-decoration-thickness:2.5px}
+#bfp .price .was em{display:block;font-style:normal;font-family:var(--sans);font-size:13px;letter-spacing:0;text-transform:none;color:var(--t1);font-weight:650;margin-top:6px}
+#bfp .price .now{text-align:right}
+#bfp .price .now small{font-family:var(--mono);font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);font-weight:700}
+#bfp .price .now b{display:block;font-size:46px;font-weight:800;letter-spacing:-.045em;line-height:1;margin-top:4px;font-variant-numeric:tabular-nums}
+#bfp .price .now em{display:block;font-style:normal;font-size:13px;color:var(--t2);margin-top:5px}
+#bfp .note{margin:-6px 20px 22px;font-size:13px;color:var(--t3);text-align:center}
+
+@media (max-width:960px){
+  #bfp .grid{grid-template-columns:1fr;gap:48px}
+}
+@media (max-width:560px){
+  #bfp .form{padding:20px 14px 18px}
+  #bfp .co{width:calc(100% + 12px);margin:12px -6px 0}
+  #bfp .stack{box-shadow:6px 6px 0 var(--ink)}
+  #bfp .stack .hd{padding:22px 20px 20px}
+  #bfp .stack .hd h2{font-size:24px;max-width:none;padding-right:70px}
+  #bfp .bftag{right:-6px;top:-16px;padding:8px 12px 8px 22px}
+  #bfp .bftag::before{left:8px}
+  #bfp .bftag b{font-size:20px}
+  #bfp .items{padding:6px 20px}
+  #bfp .core{margin-inline:14px}
+  #bfp .tl{flex-direction:column;gap:6px}
+  #bfp .price{margin:14px;flex-direction:column;align-items:flex-start}
+  #bfp .price .now{text-align:left}
+  #bfp .note{margin:-2px 14px 18px}
+}
+</style>
+</head>
+<body>
+<div id="bfp">
+
+<div class="bf" role="note"><div class="in"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="9" width="18" height="12" rx="1.5"/><path d="M2 9h20M12 9v12M12 9c-2-4-7-5-7-2s4 2 7 2c3 0 7 1 7-2s-5-2-7 2"/></svg><span><b>Black Friday Price</b></span><span class="sp"></span><span>Only 15 spots</span><span class="sp hide-m"></span><span class="hide-m">Never discounted again</span></div></div>
+
+<header class="top">
+  <div class="wrap">
+    <img src="../assets/rig-logo.webp" alt="The Real Insurance Group" width="900" height="477">
+    <span class="secure"><svg viewBox="0 0 24 24"><rect x="4" y="10" width="16" height="11" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg>Secure Checkout</span>
+  </div>
+</header>
+
+<main>
+  <div class="wrap grid">
+
+    <section>
+      <span class="k">The Marketing Machine, Black Friday</span>
+      <h1 class="h1"><span>We run your ads.</span><span><em class="mk">For 3 straight months.</em></span></h1>
+      <p class="sub">You never touch Ads Manager. You take the calls. We build, launch and manage your Medicare ads every day. <b>$1,250 today, one payment for all 3 months. $0 setup.</b></p>
+
+      <div class="card form">
+        <div class="step"><i>$</i>Secure Checkout</div>
+        <div id="co-slot"><p class="co-w">Loading secure checkout.</p></div>
+      </div>
+      <div class="fine">
+        <span><svg viewBox="0 0 24 24"><rect x="4" y="10" width="16" height="11" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg>Secure payment</span>
+        <span><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>One payment</span>
+        <span><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>$0 setup</span>
+      </div>
+    </section>
+
+    <aside class="stack" aria-label="Everything you get">
+      <div class="bftag" aria-label="Black Friday price"><small>Black Friday</small><b>$1,250</b><small>One payment</small></div>
+      <div class="hd">
+        <span class="k">Everything You Get Today</span>
+        <h2>Your ads, run for you, <em class="mk">plus every bonus.</em></h2>
+        <p>The done-for-you marketing, and everything we added for being on the webinar.</p>
+      </div>
+
+      <div class="core">
+        <div class="core-h">
+          <span class="tag">The Offer</span>
+          <div class="tl"><h3>We Run Your Ads For 3 Months</h3><span class="val y">$2,500 &times; 3</span></div>
+          <p>Facebook and Instagram. Three consecutive months.</p>
+        </div>
+        <ul>
+          <li><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg><span><b>We dial in your market and message</b> with you, so every ad talks to the right Medicare buyer before a dollar gets spent.</span></li>
+          <li><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg><span><b>We script, build, launch and manage your ads</b> every day. You never touch Ads Manager.</span></li>
+          <li><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg><span><b>We test hard and scale your winners</b> with the exact testing system from the webinar.</span></li>
+          <li><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg><span><b>We build ads for your whole funnel.</b> Top, middle and bottom: reach, build trust, close the lead.</span></li>
+        </ul>
+      </div>
+
+      <div class="items">
+        <div class="it"><span class="n">01</span><div><div class="tl"><h3>Onboarding Call With Johnny And Javier</h3><span class="val inc">Included</span></div><p>1-on-1 with both of us. We map your market, message and launch plan together.</p>
+          <div class="who"><span class="fx"><img src="assets/johnny.webp" alt="Johnny Brock" width="818" height="1052"><img src="assets/javier.jpg" alt="Javier Martinez" width="435" height="432"></span><span><b>Johnny</b> and <b>Javier</b></span></div></div></div>
+        <div class="it"><span class="n">02</span><div><div class="tl"><h3>Your Slack Channel And GoHighLevel Specialist</h3><span class="val">$18,000</span></div><p>Straight to our team. Christopher builds your funnels, automations and follow-up.</p>
+          <div class="who"><span class="fx"><img src="assets/christopher-avatar.jpg" alt="Christopher, GoHighLevel specialist" width="240" height="240"></span><span><b>Christopher</b>, 800+ funnels built</span></div></div></div>
+        <div class="it"><span class="n">03</span><div><div class="tl"><h3>The Skool Community, For Life</h3><span class="val">$1,764</span></div><p>Courses on how to market and sell, live calls with Johnny and Javier, and agents posting wins every day.</p></div></div>
+        <div class="it"><span class="n">04</span><div><div class="tl"><h3>Real CRM, Built On GoHighLevel</h3><span class="val">$6,164</span></div><p>Our funnels and automations loaded on day one. Every lead gets a text, a call and reminders. Yours for life.</p></div></div>
+        <div class="it"><span class="n">05</span><div><div class="tl"><h3>Your Whole Setup, Done For You</h3><span class="val inc"><s>$4,000</s> $0</span></div><p>Ad account, GoHighLevel, domain and A2P, so texts actually send. Number, email and calendar connected.</p></div></div>
+      </div>
+
+      <div class="price">
+        <div class="was">Full price<s>$37,428</s><em>You save $36,178</em></div>
+        <div class="now"><small>Today, Black Friday</small><b>$1,250</b><em>One payment. All 3 months.</em></div>
+      </div>
+      <p class="note">Ad spend is separate and goes straight to Meta.</p>
+    </aside>
+
+  </div>
+</main>
+
+<footer>
+  <div class="wrap">
+    <img src="../assets/rig-logo.webp" alt="The Real Insurance Group" width="900" height="477">
+    <p>&copy; 2026 The Real Insurance Group. All rights reserved.<br>For licensed insurance professionals only. Not connected with or endorsed by the U.S. government or the federal Medicare program.</p>
+  </div>
+</footer>
+
+</div>
+<script>
+(function () {
+  // The real GoHighLevel order form ($1,250 product) lives on its own funnel step and is framed here.
+  var ORDER_FORM = 'https://join.therealinsurancegroup.com/bf-order';
+  // Where a paid order goes: the onboarding booking step of the same funnel.
+  var NEXT = 'https://join.therealinsurancegroup.com/bf-onboarding';
+  var slot = document.getElementById('co-slot');
+  var f = document.createElement('iframe');
+  f.className = 'co'; f.title = 'Secure checkout'; f.allow = 'payment'; f.src = ORDER_FORM + location.search;
+  slot.innerHTML = ''; slot.appendChild(f);
+  function go(url) { location.href = (url || NEXT) + location.search; }
+  // Paid: GHL moves the framed order form to the next step. Same domain on GHL, so read it and lift it to the top.
+  f.addEventListener('load', function () {
+    try {
+      var p = f.contentWindow.location.pathname;
+      if (/bf-onboarding/.test(p)) return go(f.contentWindow.location.href.split('?')[0]);
+      var fit = function () { try { var h = f.contentDocument.documentElement.scrollHeight; if (h > 300) f.style.height = h + 'px'; } catch (e) {} };
+      fit(); setInterval(fit, 800);
+    } catch (e) {}
+  });
+  // Any other origin: the booking page tells its parent it was reached.
+  addEventListener('message', function (e) { var d = e.data; if (d && d.rigbf === 'paid') go(d.url); });
+})();
+</script>
+</body>
+</html>
