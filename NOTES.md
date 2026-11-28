@@ -59,3 +59,36 @@ the 3,459 leads at $1.64 veteran-campaign line is OK on a public page.
 **2026-10-28 b (A/B):** Javier is split-testing the headline in GHL with a separate webhook per variant (his choice over one webhook + variant field). index.html is now **variant B** (new headline): WEBHOOK = a94cc5bb… (cloned workflow "Opt-in B"), payload also carries variant:'B'. Variant A = the old "Master Medicare marketing" page already in GHL, still on 6c582ec4…; its code is commit f7b3528 if it ever needs re-pasting. Compare per-workflow enrollments against split-test visitors.
 
 **2026-10-28 c:** Javier pasted B into GHL and the videos/images/fonts were dead: index.html had drifted back to relative `assets/` paths (43 refs) after the 10-17 video adds. All asset refs are now absolute GitHub Pages URLs in the source itself (works on Pages and when pasted), and the videos carry crossorigin="anonymous" so the .vtt captions load cross-origin (Pages sends ACAO *). Tested from a bare origin with no assets folder: 20/20 images, 6/6 videos play, captions load, fonts load. **Rule: never hand over GHL paste code with a relative path; grep for `"assets/` first.**
+
+**2026-11-23 Black Friday (commit 2abffdc):** Javier: "love the design", make it a Black Friday special for Saturday Nov 28, 11AM EST, with special gifts for joining and 65% off, said discreetly. Added only a layer: ink ribbon at the top with a dashed yellow edge (Black Friday Special, live attendees get special gifts, date), a swaying yellow "Black Friday 65% Off, Live attendees" gift tag on the webinar window, dashed gift notes under the hero CTA and the final CTA, and "Sat, Nov 28" in the pill, countdowns, agenda line and pop-up rail. The 65% is never tied to a named product or price, only "live attendees". Leftover &middot; and &rarr; in testimonial tags swapped for commas/words. Countdown logic is unchanged (next Saturday), so after Nov 28 the page still says Nov 28: revert to f7b3528-style dates or 8713143 after the event. Variant A in GHL was not touched.
+
+**2026-11-23 b (festive pass):** Javier: "add like gifts, little gifts everywhere... people can actually clearly see that." Added ~25 small outlined gift boxes (paper/yellow/pink/blue/gold/ink, gently bobbing, aria-hidden, injected by a small script) in the margins of every section and inside the dark closing box (light outlines there), every Reserve button's arrow icon is now a gift icon, and a yellow scrolling marquee under the proof strip (Black Friday Special, special gifts for live attendees, 65% off, Sat Nov 28 11AM EST). On phones most gifts hide so they never cover copy. Revert to 8713143 after the event.
+
+**2026-11-23 c (thank-you Black Friday):** thanks.html (live at therealinsurancegroup.com/confirmed, the opt-in's THANKS) got the same layer: top ribbon, "Seat reserved for Black Friday" pill, swaying 65% Off tag above the ticket, "Black Friday live masterclass" on the ticket, gift notes in the hero and Johnny's sign-off, yellow marquee, gift boxes in every section. Its 7 relative asset paths are now absolute GitHub Pages URLs so the GHL paste works. Revert after the event to the commit before this one.
+
+**2026-11-23 d:** opt-in THANKS now = https://join.therealinsurancegroup.com/registered-for-black-friday (Javier's GHL page for the Black Friday thanks.html). Put it back to https://therealinsurancegroup.com/confirmed after the event.
+
+## 2026-11-28: Black Friday checkout funnel ($1,250, one payment), in `bf/`
+Javier: "create me a checkout page... based off the opt-in page style, keep it simple... checkout, then booking,
+then the thank-you page with the next steps for onboarding... legitimate checkout, $1,250 one time... embedded
+checkout from GoHighLevel... make sure it redirects to the booking page." Offer source: the v6 Black Friday deck
+(v6-black-friday.medicare-marketing-machine.pages.dev), slides 72 to 83.
+
+- **GHL (location 6R8qbbSpBWNiFPaF6WsI):** product "Black Friday Marketing Machine: We Run Your Ads For 3 Months",
+  $1,250 one time (product 6b0af126bb1defbf46f99970). Funnel "Black Friday Checkout ($1,250)" (QEc0KqCuIGicUBBmGPUh)
+  on join.therealinsurancegroup.com, payment mode Live (Stripe connected):
+  1. `/black-friday-checkout` (designed page, frames step 2)
+  2. `/bf-order` (native GHL Order Form element with the product; next step = 3)
+  3. `/bf-onboarding` (booking)  4. `/bf-welcome` (next steps)
+- **How the pages get in:** steps 1, 3, 4 are empty published GHL pages. The funnel's Body tracking code holds a
+  router that loads `bf/ghl/<page>.js` from GitHub Pages by pathname. Edit the .html, `python3 bf/build_ghl.py`, push.
+  GitHub Pages caches ~10 min. Tracking code only lands on a page when that page is republished.
+- **Paid redirect:** the order form runs inside the checkout's iframe (same domain). After payment GHL moves the frame
+  to /bf-onboarding; that page breaks out to the top window (and the checkout's frame-load check does the same).
+  Tested by simulating the frame navigation, NOT with a real payment.
+- **Booking:** calendar m6f8GDD9TTsnJgnI4mP6 (Johnny's live booking calendar, widget title "Medicare Agency Growth
+  Session") because there is no onboarding calendar; Johnny's Calendar 0uqMdgfKWeutWevyglFA has no public widget (404).
+  Booking complete -> /bf-welcome via the msgsndr booking-complete message.
+- **Open:** a real onboarding calendar; trim the GHL order form (Company is required, full address, "Upgrade Your Order
+  & Save!" heading); purchase workflow (tags, Slack/Skool access emails) not built; welcome step 2's "come ready with your
+  Facebook page and ad account login" is my assumption.
